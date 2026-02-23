@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groundwork USA - Tree Inventory Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* HOME PAGE SPECIFIC STYLES */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/home-banner.jpg') center center / cover no-repeat;
+			color: white;
+			padding: 60px 40px;
+			text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        /* CARD GRID */
+        .card-grid {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .doc-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--gw-green);
+            text-decoration: none;
+            color: var(--gw-dark-gray);
+            display: block;
+        }
+        
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .doc-card h3 {
+            color: var(--gw-blue);
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .doc-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .doc-card .card-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        /* COLOR VARIATIONS */
+        .doc-card.card-blue { border-top-color: var(--gw-blue); }
+        .doc-card.card-orange { border-top-color: var(--gw-orange); }
+        .doc-card.card-green { border-top-color: var(--gw-green); }
+        
+        /* QUICK START SECTION */
+        .quick-start {
+            max-width: 900px;
+            margin: 80px auto 60px auto;
+            padding: 40px;
+            background: var(--gw-light-gray);
+            border-radius: 8px;
+            border-left: 6px solid var(--gw-green);
+        }
+        
+        .quick-start h2 {
+            color: var(--gw-dark-gray);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .quick-start ol {
+            margin-left: 25px;
+            line-height: 2;
+        }
+        
+        .quick-start li {
+            font-size: 16px;
+            color: var(--gw-dark-gray);
+        }
+        
+        .quick-start a {
+            color: var(--gw-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .quick-start a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/logo-groundwork.png" alt="Groundwork USA">
+            </div>
+            <div class="header-tagline">
+                <h2>Tree Inventory Documentation</h2>
+                <p>Eco-Benefit Dashboard User Guide</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOP NAVIGATION -->
+    <nav class="main-nav">
+  <ul>
+            <li><a href="#index" class="active">Home</a></li>
+			<li><a href="#user-guide">User Guide</a></li>
+			<li><a href="#methodology">Methodology</a></li>
+		    <li><a href="#widget-ref">Widget Reference</a></li>
+            <li><a href="#data-dictionary">Data Dictionary</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+    </ul>
+  </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Understanding Your Urban Forest Data</h1>
+            <p>Comprehensive documentation for Groundwork USA's tree inventory platform and eco-benefit calculations. Learn how your community's urban forest creates measurable environmental, economic, and health benefits.</p>
+        </div>
+    </section>
+
+    <!-- DOCUMENTATION CARDS -->
+    <div class="card-grid">
+        
+        <a href="user-guide.html" class="doc-card card-green">
+            <img src="images/home-banner.jpg" alt="User Guide" class="card-image">
+            <h3>User Guide</h3>
+            <p>Step-by-step instructions for navigating the dashboard, running reports, and interpreting your data.</p>
+        </a>
+        
+        <a href="methodology.html" class="doc-card card-blue">
+            <img src="images/home-banner.jpg" alt="Methodology" class="card-image">
+            <h3>Methodology</h3>
+            <p>Learn how eco-benefits are calculated, including iTree API integration, economic valuation, and heat illness prevention modeling.</p>
+        </a>
+		
+		<a href="widget-ref.html" class="doc-card card-orange">
+            <img src="images/home-banner.jpg" alt="Widget Reference" class="card-image">
+            <h3>Widget Reference</h3>
+            <p>Detailed explanations of every dashboard widget including what each metric measures and how to use it effectively.</p>
+        </a>
+        
+        <a href="data-dictionary.html" class="doc-card card-orange">
+            <img src="images/home-banner.jpg" alt="Data Dictionary" class="card-image">
+            <h3>Data Dictionary</h3>
+            <p>Complete reference for all 163 fields in your CSV exports, with descriptions, data types, and domain values.</p>
+        </a>
+        
+        <a href="faq.html" class="doc-card card-green">
+            <img src="images/home-banner.jpg" alt="FAQs" class="card-image">
+            <h3>FAQs</h3>
+            <p>Answers to common questions about data collection, calculations, and best practices for using your results.</p>
+        </a>
+        
+    </div>
+
+    <!-- QUICK START -->
+    <section class="quick-start">
+        <h2>Quick Start</h2>
+        <ol>
+            <li>New to the dashboard? Start with the <a href="user-guide.html">User Guide</a> to learn the basics.</li>
+            <li>Need to understand every detail of an eco benefit calculation? Check the <a href="methodology.html">Methodology</a> page.</li>
+			<li>Wondering about a specific number in the dashboard? <a href="widget-ref.html">Widget Reference</a> page.</li>
+            <li>Exporting data? Reference the <a href="data-dictionary.html">Data Dictionary</a> for field descriptions.</li>
+            <li>Have a Question? Browse the <a href="faq.html">FAQs</a> to see if someone has already asked it.</li>
+        </ol>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-upper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Groundwork USA</h3>
+                    <p>Groundwork USA is a national network of local organizations working to bring about the sustained regeneration, improvement, and management of the physical environment by developing community-based partnerships.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="user-guide.html">User Guide</a></p>
+                    <p><a href="methodology.html">Methodology</a></p>
+                    <p><a href="widget-ref.html">Widget Reference</a></p>
+                    <p><a href="data-dictionary.html">Data Dictionary</a></p>
+                    <p><a href="faq.html">FAQs</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>For technical support or questions about your local tree inventory program, please contact your regional Groundwork affiliate.</p>
+                    <p><a href="https://groundworkusa.org" target="_blank">groundworkusa.org</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Groundwork USA. All rights reserved. | <a href="https://groundworkusa.org/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

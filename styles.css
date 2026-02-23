@@ -1,0 +1,531 @@
+/* ============================================
+   GROUNDWORK USA - DOCUMENTATION SITE STYLES
+   Matches data dictionary page exactly
+   ============================================ */
+
+/* CSS VARIABLES - Color Palette */
+:root {
+    --gw-green: #009f4f;
+    --gw-blue: #008ab9;
+    --gw-dark-gray: #2f2f2f;
+    --gw-light-gray: #f5f5f5;
+    --gw-offwhite: #fffefa;
+    --gw-light-green: #9cd4b8;
+    --gw-dark-green: #006633;
+    --gw-dark-blue: #016b8f;
+    --gw-light-blue: #9bd1e5;
+    --gw-orange: #cb7d3a;
+    --gw-light-orange: #d8a06e;
+    --gw-pale-orange: #e6cfba;
+}
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE STYLES */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--gw-dark-gray);
+    background-color: var(--gw-offwhite);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.site-header {
+    background-color: white;
+    padding: 20px 40px;
+    border-bottom: 3px solid var(--gw-green);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-container img {
+    height: 80px;
+    width: auto;
+}
+
+.header-tagline {
+    text-align: right;
+}
+
+.header-tagline h2 {
+    color: var(--gw-blue);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header-tagline p {
+    color: var(--gw-dark-gray);
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+/* ============================================
+   TOP NAVIGATION
+   ============================================ */
+
+.main-nav {
+    background-color: var(--gw-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: rgba(255,255,255,0.2);
+    border-bottom-color: white;
+}
+
+/* ============================================
+   MAIN LAYOUT WITH SIDEBAR
+   ============================================ */
+
+.page-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    padding-top: 20px;
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    border-right: 1px solid #e8e8e8;
+}
+
+.sidebar h3 {
+    color: var(--gw-dark-gray);
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gw-green);
+}
+
+.sidebar-section {
+    margin-bottom: 25px;
+}
+
+.sidebar-section h4 {
+    color: var(--gw-dark-gray);
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 3px;
+}
+
+.sidebar button {
+    width: 100%;
+    text-align: left;
+    background: var(--gw-light-gray);
+    border: none;
+    color: var(--gw-dark-gray);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.sidebar button:hover {
+    background: var(--gw-blue);
+    color: white;
+}
+
+.sidebar button.active {
+    background: var(--gw-blue);
+    color: white;
+    font-weight: 600;
+}
+
+.filter-count {
+    font-size: 11px;
+    color: #666;
+    margin-left: 8px;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.main-content {
+    flex: 1;
+    padding: 0 40px 40px 40px;
+    min-width: 0;
+}
+
+.page-title {
+    color: var(--gw-dark-gray);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--gw-green);
+    padding-bottom: 10px;
+}
+
+.page-intro {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* ============================================
+   SEARCH BOX
+   ============================================ */
+
+.search-container {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--gw-green);
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 2px solid var(--gw-light-gray);
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: var(--gw-green);
+}
+
+.search-info {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+/* ============================================
+   FIELD LIST
+   ============================================ */
+
+.field-list {
+    background: white;
+    padding: 0;
+    margin: 0 0 30px 0;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+
+.field-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e8e8e8;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.field-item:hover {
+    background: var(--gw-light-gray);
+}
+
+.field-item:last-child {
+    border-bottom: none;
+}
+
+/* When expanded, switch to block layout */
+.field-item.expanded {
+    background: #fafafa;
+    border-left: 4px solid var(--gw-blue);
+    display: block;
+    padding: 0;
+}
+
+/* Recreate the header bar inside expanded items */
+.field-item.expanded > span {
+    display: inline-block;
+    padding: 10px 5px;
+    vertical-align: middle;
+}
+
+.field-item.expanded > .field-position {
+    padding-left: 20px;
+}
+
+.field-item.expanded > .field-name {
+    flex: none;
+}
+
+.field-item.expanded > .category-badge {
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.field-position {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: #999;
+    min-width: 35px;
+    text-align: right;
+}
+
+.field-name {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    color: var(--gw-dark-gray);
+    font-weight: 600;
+    flex: 1;
+}
+
+/* ============================================
+   CATEGORY BADGES
+   ============================================ */
+
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.cat-details { 
+    background: #9cd4b8; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-measurements { 
+    background: #d8a06e; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-site { 
+    background: #e6cfba; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-raw-benefit { 
+    background: #a19ec2; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-benefit-value { 
+    background: #e6fffa; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-administrative { 
+    background: #9bd1e5; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-metadata { 
+    background: #e8e8e8; 
+    color: var(--gw-dark-gray); 
+}
+
+.cat-not-used { 
+    background: #ffcccc; 
+    color: var(--gw-dark-gray); 
+}
+
+/* ============================================
+   FIELD DETAILS (EXPANDABLE)
+   ============================================ */
+
+.field-details {
+    display: none;
+    margin: 0;
+    padding: 15px 20px;
+    border-top: 1px solid #e8e8e8;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 800px;
+    clear: both;
+}
+
+.field-item.expanded .field-details {
+    display: block;
+}
+
+.field-meta {
+    margin-bottom: 15px;
+}
+
+.field-meta-line {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.field-meta-label {
+    font-weight: 600;
+    color: #666;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.field-meta-value {
+    color: var(--gw-dark-gray);
+}
+
+.field-description {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.field-description strong {
+    font-weight: 600;
+    color: #666;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.field-example {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: var(--gw-light-gray);
+    border-left: 3px solid var(--gw-orange);
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    color: #555;
+}
+
+/* ============================================
+   FOOTER - Two-tone like data dictionary
+   ============================================ */
+
+.site-footer {
+    margin-top: 60px;
+}
+
+.footer-upper {
+    background: var(--gw-green);
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: white;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--gw-light-gray);
+}
+
+.footer-bottom {
+    background: var(--gw-dark-green);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--gw-light-gray);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 0 20px 40px 20px;
+    }
+}
+
+/* HIDDEN CLASS */
+.hidden {
+    display: none !important;
+}

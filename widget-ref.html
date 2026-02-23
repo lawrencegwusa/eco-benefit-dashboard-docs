@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Quick Reference - Groundwork USA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .reference-table {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .table-header {
+            background: var(--gw-green);
+            color: white;
+            padding: 15px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+        
+        .table-header:hover {
+            background: var(--gw-dark-green);
+        }
+        
+        .table-header::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+        
+        .reference-table.collapsed .table-header::after {
+            transform: rotate(-90deg);
+        }
+        
+        .group-intro {
+            background: var(--gw-light-gray);
+            padding: 25px;
+            border-bottom: 3px solid var(--gw-green);
+            display: block;
+        }
+        
+        .reference-table.collapsed .group-intro {
+            display: none;
+        }
+        
+        .group-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .group-screenshot {
+            margin-top: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .group-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .screenshot-caption {
+            background: #f9f9f9;
+            padding: 10px 15px;
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            border-top: 1px solid #ddd;
+        }
+        
+        .widget-group {
+            border-bottom: 2px solid var(--gw-light-gray);
+        }
+        
+        .widget-group:last-child {
+            border-bottom: none;
+        }
+        
+        .group-title {
+            background: #e0e0e0;
+            color: var(--gw-dark-gray);
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .widget-entry {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e8e8e8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .widget-entry:hover {
+            background: var(--gw-light-gray);
+        }
+        
+        .widget-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .widget-name {
+            font-weight: 600;
+            color: var(--gw-dark-gray);
+            font-size: 16px;
+        }
+        
+        .widget-source {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .widget-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid var(--gw-light-gray);
+        }
+        
+        .widget-entry.expanded .widget-details {
+            display: block;
+        }
+        
+        .widget-entry.expanded {
+            background: #fafafa;
+            border-left: 4px solid var(--gw-blue);
+        }
+        
+        .widget-fields-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .widget-field-col {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .widget-field-label {
+            font-weight: 600;
+            color: var(--gw-dark-gray);
+            font-size: 13px;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--gw-light-gray);
+        }
+        
+        .widget-field-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .search-container {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--gw-green);
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 14px;
+            border: 2px solid var(--gw-light-gray);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--gw-green);
+        }
+        
+        .search-info {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+        
+        .sidebar-section h4 {
+            color: var(--gw-dark-gray);
+            font-size: 14px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar li {
+            margin-bottom: 3px;
+        }
+        
+        .sidebar button {
+            width: 100%;
+            text-align: left;
+            background: var(--gw-light-gray);
+            border: none;
+            color: var(--gw-dark-gray);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar button:hover {
+            background: var(--gw-blue);
+            color: white;
+        }
+        
+        .sidebar button.active {
+            background: var(--gw-blue);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .filter-count {
+            font-size: 11px;
+            color: #666;
+            margin-left: 8px;
+        }
+        
+        .sidebar button.active .filter-count {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .group-filter {
+            margin-bottom: 10px;
+        }
+        
+        .tab-filters {
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        
+        .tab-filters button {
+            font-size: 12px;
+            padding: 6px 10px;
+            background: #f9f9f9;
+        }
+        
+        .tab-filters button:hover {
+            background: var(--gw-light-blue);
+            color: var(--gw-dark-gray);
+        }
+        
+        .tab-filters button.active {
+            background: var(--gw-light-blue);
+            color: var(--gw-dark-gray);
+            font-weight: 600;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        @media (max-width: 1200px) {
+            .widget-fields-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .widget-fields-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/logo-groundwork.png" alt="Groundwork USA">
+            </div>
+            <div class="header-tagline">
+                <h2>Widget Quick Reference</h2>
+                <p>Dashboard Metric Explanations</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="user-guide.html">User Guide</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="widget-quick-reference.html" class="active">Widget Reference</a></li>
+            <li><a href="data-dictionary.html">Data Dictionary</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container">
+        
+        <aside class="sidebar">
+            <h3>Filter by Group</h3>
+            
+            <div class="sidebar-section">
+                <button class="filter-btn active" data-group="all" data-tab="all">
+                    All Widgets <span class="filter-count">(49)</span>
+                </button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>Groups &amp; Tabs</h4>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Individual Benefits" data-tab="all">
+                        Individual Benefits <span class="filter-count">(28)</span>
+                    </button>
+                    <div class="tab-filters">
+                        <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                            Eco Benefits (Total) <span class="filter-count">(7)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Individual Benefits" data-tab="Comparisons">
+                            Comparisons <span class="filter-count">(7)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                            Eco Benefits (Tree) <span class="filter-count">(7)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                            Eco Benefit Value <span class="filter-count">(7)</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Summary Benefit Value" data-tab="all">
+                        Summary Benefit Value <span class="filter-count">(5)</span>
+                    </button>
+                    <div class="tab-filters">
+                        <button class="filter-btn" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                            Summary Metrics <span class="filter-count">(5)</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Pie Chart Filters" data-tab="all">
+                        Pie Chart Filters <span class="filter-count">(4)</span>
+                    </button>
+                    <div class="tab-filters">
+                        <button class="filter-btn" data-group="Pie Chart Filters" data-tab="Planting vs. Inventory Filter">
+                            Planting vs. Inventory Filter <span class="filter-count">(1)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Pie Chart Filters" data-tab="Public vs. Private Filter">
+                            Public vs. Private Filter <span class="filter-count">(1)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Pie Chart Filters" data-tab="Condition Filter">
+                            Condition Filter <span class="filter-count">(1)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Pie Chart Filters" data-tab="Land Use Filter">
+                            Land Use Filter <span class="filter-count">(1)</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Misc. Benefit" data-tab="all">
+                        Misc. Benefit <span class="filter-count">(10)</span>
+                    </button>
+                    <div class="tab-filters">
+                        <button class="filter-btn" data-group="Misc. Benefit" data-tab="Benefit Breakdown">
+                            Benefit Breakdown <span class="filter-count">(3)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Misc. Benefit" data-tab="Species (common)">
+                            Species (common) <span class="filter-count">(2)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Misc. Benefit" data-tab="Species (scientific)">
+                            Species (scientific) <span class="filter-count">(2)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Misc. Benefit" data-tab="Affiliate">
+                            Affiliate <span class="filter-count">(3)</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Map Panel" data-tab="all">
+                        Map Panel <span class="filter-count">(2)</span>
+                    </button>
+                    <div class="tab-filters">
+                        <button class="filter-btn" data-group="Map Panel" data-tab="Map">
+                            Map <span class="filter-count">(1)</span>
+                        </button>
+                        <button class="filter-btn" data-group="Map Panel" data-tab="Export">
+                            Export <span class="filter-count">(1)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <div class="search-container">
+                <input type="text" 
+                       id="searchBox" 
+                       class="search-box" 
+                       placeholder="Search widgets by name... (e.g., 'Runoff', 'Carbon', 'Species')"
+                       autocomplete="off">
+                <div class="search-info">
+                    <span id="resultCount">49 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
+                </div>
+            </div>
+            
+            <div id="individual-benefits" class="reference-table collapsed" data-group="Individual Benefits">
+                <div class="table-header">Individual Benefits</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        The core benefit metrics of the Eco-Benefit Dashboard. These widgets quantify the specific environmental services your urban forest provides over 25 years—stormwater management, carbon sequestration, air quality improvement, and energy conservation. The "Eco Benefits (Total)" tab shows raw physical measurements (gallons, pounds, kWh) for all included trees. The "Comparisons" tab converts these to relatable units like Olympic pools or cars removed for comprehension and communication. The "Eco Benefit (Tree)" tab calculates averages to benchmark per-tree performance. The "Eco Benefit Value ($)" tab converts benefits to economic values (USD2025) using federal social cost estimates and regional infrastructure costs.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group01-indiv.png" alt="Individual Benefits Dashboard View">
+                        <div class="screenshot-caption">Individual Benefits widgets in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="Eco Benefits (Total)">
+                    <div class="group-title">Eco Benefits (Total)</div>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">Runoff Avoided: Gallons</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Total stormwater runoff intercepted by all trees over 25 years. Calculated by iTree Eco based on tree species, canopy size, local rainfall patterns, and site conditions. Trees capture rain on leaf surfaces (interception) and increase soil infiltration around roots (infiltration).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">How many gallons of stormwater your urban forest prevents from entering drainage systems over 25 years. Larger trees and species with dense canopies provide greater interception and infiltration.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not include runoff reduction from increased soil permeability beyond the tree's root zone, or benefits from preventing erosion and filtering pollutants. Excludes trees without valid iTree inputs.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Compare against stormwater infrastructure capacity (pipes, detention basins) or calculate cost savings vs. gray infrastructure alternatives. Use Olympic pool comparison for public communication.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Pounds</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Total carbon dioxide equivalent stored in tree biomass (wood, branches, roots) across all trees over 25 years. This is the standing stock accumulated over each tree's 25-year span, converted to CO2 equivalent. Represents carbon that would be released if trees were removed.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The climate value locked in your existing urban forest. Larger, older trees store significantly more carbon than young trees. This is a snapshot of current storage, not annual sequestration. "We're currently preventing  X tons of carbon from entering the atmosphere."</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not measure annual carbon capture (see CO2 Removed from Atmoshpere). Carbon storage only persists while trees remain alive.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Justify preservation of mature trees in development decisions. Show the climate cost of tree removal. Use "cars removed" comparison for public understanding. Pair with sequestration to show both storage and ongoing capture.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Removed from Atmosphere: Pounds</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Total carbon dioxide removed from the atmosphere through tree growth over 25 years. As trees photosynthesize and add biomass (wood, branches, roots), they sequester atmospheric CO2. This is the cumulative total of annual CO2 removed across all years.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The climate mitigation value of tree growth over 25 years. Young, fast-growing trees sequester more annually than mature trees, but large trees contribute greater total mass. "We prevented X tons of CO2 from entering atmosphere"</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This measures annual removal of CO2, not the carbon already stored in existing biomass (see Carbon Stored). </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Use for climate action plans and carbon offset calculations. Compare to vehicle emissions using "cars removed" or "flights" comparisons. Pair with Carbon Stored to show total carbon impact.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">Air Pollutants Removed: Pounds</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Total air pollutants (CO, NO₂, SO₂, O₃, PM2.5, PM10) removed by tree leaves and bark over 25 years. Calculated by iTree Eco using dry deposition model based on species-specific leaf area, local air quality data, and deposition velocities. Trees absorb gaseous pollutants and intercept particulate matter.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The air quality improvement your trees provide, particularly important in environmental justice communities near pollution sources. Larger leaf surface area and longer growing seasons increase removal.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not include indirect air quality benefits from reduced building energy demand (see Powerplant Emissions Avoided). Pollutant removal rates vary by species, season, and local pollution levels. Trees don't eliminate pollution sources.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Support tree planting in high-pollution corridors and environmental justice neighborhoods. Link to public health outcomes and asthma rates. Use "elephants" comparison for memorable public communication.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">Powerplant Emissions Avoided: Pounds</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Pollutants not emitted by power plants over 25 years due to reduced building energy demand from tree shade and windbreak effects. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Based on regional electricity generation mix and emission rates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Indirect air quality benefit from energy conservation. Trees reducing cooling and heating loads mean power plants burn less fuel. Most significant in areas with fossil fuel-heavy electricity generation.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset of trees meeting building proximity criteria—check reference tree count. Benefits depend on regional energy sources; cleaner grids show smaller emission reductions. Does not include direct pollutant removal by leaves.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Complement direct air quality benefits (Pollutants Removed). Show connection between tree planting and energy policy. Stronger argument in regions with coal or natural gas generation. Pair with electricity savings metric.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">Heating Energy Saved: MBTU</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Heating energy (natural gas, oil, electric heat) saved over 25 years through windbreak effects minus heating energy lost through winter shade. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Trees reduce wind infiltration but can block beneficial winter sun, especially on south-facing walls. Net result can be positive or negative.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Net winter energy impact from trees. Positive values mean windbreak benefit exceeds shade penalty. Negative values mean winter shade blocks more solar heat gain than the tree saves through wind reduction. Most effective for evergreens on north/northwest sides of buildings.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset of trees meeting building proximity criteria—check reference tree count. Climate zone strongly affects results: cold climates often show negative values due to high solar heating value, while moderate climates show positive values where windbreak benefits dominate.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify which tree placements provide net heating benefits vs. penalties. Support strategic evergreen planting on windward sides (north/northwest) while avoiding deciduous trees blocking south-facing walls. Negative values aren't failures—they reveal important placement considerations for future plantings.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
+                        <div class="widget-header">
+                            <span class="widget-name">Electricity Saved: kWh</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Electricity saved or lost over 25 years from trees near buildings. Calculated for trees within 60 feet of buildings 3 stories or shorter. Includes cooling energy saved when trees shade air conditioners and reduce summer heat gain, minus heating energy penalty when winter shade blocks beneficial solar heat gain on building surfaces.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Net electricity impact from trees. Positive values mean cooling savings exceed heating penalties. Negative values mean winter shade blocks more solar heat gain than the tree saves in summer cooling energy. Most significant in climates with substantial cooling loads.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset of trees meeting building proximity criteria—check reference tree count. Heating penalty is applied as a regional default based on climate zone assumptions about electric heating prevalence, regardless of actual building heating fuel type. Does not distinguish between buildings with electric vs. gas heat.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify which climates and tree placements provide net cooling benefits vs. penalties. Support strategic tree planting on west/south exposures for AC savings while avoiding placements that block winter sun. Negative values reflect conservative methodology—actual benefit may be higher if buildings use gas heating.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Comparisons">
+                    <div class="group-title">Comparisons</div>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">Runoff Avoided: Olympic Swimming Pools</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Gallons of runoff converted to Olympic swimming pools (660,432.25 gallons per pool). Conversion makes large stormwater numbers relatable and memorable for public audiences. Based on Wikipedia Olympic pool specifications (50m × 25m × 2m minimum depth).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">A visual, tangible way to communicate stormwater volume. "Our trees intercept enough water to fill X Olympic pools" is more compelling than gallons for general audiences.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This is purely a unit conversion for communication—it doesn't change the underlying hydrological benefit. The conversion assumes standard Olympic pool dimensions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Public presentations, press releases, social media, and community reports. Help non-technical audiences grasp scale. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Cars Removed for 25 Years</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Carbon storage converted to passenger vehicles removed from roads for 25 years. Average car emits 4,600 kg CO₂ per year (EPA). Calculation: total kg CO₂ stored ÷ 4,600 ÷ 25 = cars removed for full 25-year period.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Connects tree preservation to transportation emissions. "Keeping these trees standing is equivalent to removing X cars from roads for 25 years" resonates with climate-conscious audiences.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This represents standing stock, not annual sequestration. Carbon only remains stored while trees are alive—removal or death releases it. Comparison uses EPA average passenger vehicle emissions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Integrate tree preservation into climate action plans. Counter arguments for tree removal in development. Link urban forestry to transportation sector emissions reductions. Use in climate messaging.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Removed from Atmosphere: Passengers Flying Around the World</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">CO₂ sequestration converted to round-the-world passenger flights. One passenger on round-the-world flight emits ~2,812 kg CO₂ (6,200 lbs), based on Terrapass data for NY-LA round-trip (1,240 lbs) scaled by distance ratio (×5 for circumference).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Dramatic comparison highlighting carbon capture from tree growth. Makes abstract CO₂ sequestration tangible by referencing familiar activity.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Flight emissions are illustrative comparison only—trees don't directly offset aviation. Calculation uses scaled cross-country flight data, not actual around-the-world routes. </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Climate storytelling for broad audiences. Social media and public presentations. Balance with more precise metrics (pounds CO₂) for technical audiences. Effective for demonstrating scale of tree planting programs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">Air Pollutants Removed: Elephants</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Pounds of air pollutants converted to African elephant body weights (6,000 kg or 13,200 lbs per elephant). Provides memorable visual scale for abstract pollution removal numbers.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Fun, shareable metric for social media and community presentations. Makes abstract pollution numbers tangible and engaging for general audiences.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Purely a weight comparison for communication purposes. Doesn't change the actual air quality benefit. Uses average African elephant weight as reference.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Public outreach campaigns, community presentations, and social media content. Particularly effective for youth and family audiences. Creates shareable, memorable talking points about air quality.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">Powerplant Emissions Avoided: Miles Driven</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Avoided emissions converted to vehicle miles not driven. Average passenger vehicle emits 0.4 kg CO₂ per mile (EPA). Calculation: kg emissions avoided ÷ 0.4 = equivalent miles not driven (or kg × 2.5 = miles).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Links tree energy savings to transportation impact. "Our trees prevent emissions equivalent to X miles of driving" connects urban forestry to familiar emissions source.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This represents indirect emissions avoided through energy conservation, not direct offset of vehicle use. Based on EPA average vehicle emissions; actual emissions vary by vehicle type and fuel efficiency.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Public outreach campaigns, community presentations, and social media content. Creates shareable, relateable talking about emission reduction.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">Heating Energy Saved: US Homes Powered for One Year</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">MBTUs of heating energy saved converted to annual household heating equivalents. Average US household uses 90 MBTU per year for heating (U.S. Energy Information Administration Residential Energy Consumption Survey).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Household-scale framing for heating energy savings. Shows how trees reduce neighborhood energy demand in relatable terms. More significant in northern climates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Assumes average household heating consumption; actual usage varies by climate, home size, and insulation. Only includes space heating, not total home energy use.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Demonstrate heating cost savings to homeowners and property managers. Support weatherization and energy efficiency programs. More compelling messaging in cold climate regions. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Comparisons">
+                        <div class="widget-header">
+                            <span class="widget-name">Electricity Saved: EV Miles Driven</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">kWh of electricity saved converted to electric vehicle miles driven. Average EV efficiency is 0.35 kWh per mile (EnergySage/Edmunds). Calculation: kWh saved ÷ 0.35 = equivalent EV miles.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Modern comparison metric linking tree cooling benefits to electric vehicle charging. "Energy saved by our trees could power an EV for X miles" connects to clean energy transition.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This is a theoretical equivalency for communication. Doesn't mean electricity was actually used for EV charging. Based on average EV efficiency; varies by vehicle model and driving conditions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Appeal to sustainability-minded audiences and EV owners. Connect urban forestry to clean energy and transportation goals. Use in climate action communications.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Eco Benefits (Tree)">
+                    <div class="group-title">Eco Benefits (Tree)</div>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">Runoff Avoided: Gallons per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average stormwater runoff avoided per tree over 25 years. Total gallons divided by tree count. </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years. Can be used to project future planting programs and estimate total stormwater impact from proposed plantings. Helps benchmark typical tree performance for planning purposes.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Averages can mask wide variation. A few large trees may drive up average while many small trees contribute less. Does not indicate median or distribution of values. Not useful for diagnosing existing forest performance.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Project stormwater benefits of proposed planting programs: multiply average by number of trees to estimate total gallons intercepted. Compare species to select high-performing varieties for stormwater management sites.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Pounds per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average carbon storage per tree. Total CO₂ equivalent stored divided by tree count. Highly variable by species, age, and size—mature trees in current inventory store 10-100× more than newly planted saplings would initially.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average storage across all existing trees. Shows typical carbon stock per tree, but heavily influenced by existing mature trees. Not predictive of new planting performance since young trees start with near-zero storage.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average masks extreme variation between young and mature trees. Newly planted trees contribute almost nothing to this average initially. Not useful for projecting new planting carbon storage in early years.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Demonstrate value of preserving existing mature tree canopy. Calculate carbon loss from proposed tree removal. Not recommended for projecting new planting benefits—use sequestration rate instead for growth projections.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Removed from Atmosphere: Pounds per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average CO₂ sequestration per tree over 25 years. Total sequestration divided by tree count. Shows cumulative carbon capture through growth. Young, fast-growing trees may sequester more annually than slow-growing mature trees.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years. Use to project future planting programs: if average tree sequesters X pounds and you plant Y trees, expect Z total pounds captured. Helps identify species with high carbon capture rates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average includes both fast-growing young trees and slow-growing mature trees in current inventory. Does not predict species-specific performance—mixing young and old trees obscures growth patterns.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Project long-term carbon capture from planting programs. Prioritize fast-growing species for maximum sequestration. Compare to vehicle emissions using conversion factors to communicate climate impact.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">Air Pollutants Removed: Pounds per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average air pollutant removal per tree over 25 years. Total pounds divided by tree count. Varies significantly by species leaf area, growing season length, and local air pollution levels.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years. Use to project future planting programs: if average tree removes X pounds and you plant Y trees, expect Z total pounds removed. Helps identify high-performing species for air quality.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average can be skewed by a few very large trees in current inventory. Pollutant removal depends heavily on local air quality—same species removes more in polluted areas. </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Project air quality benefits of proposed planting programs. Select species with large leaf area and long growing seasons for environmental justice communities. Pair with local air quality data to target high-pollution corridors.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">Powerplant Emissions Avoided: Pounds per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average avoided power plant emissions per tree over 25 years. Total pounds divided by tree count. Only includes trees within 60 feet of buildings 3 stories or shorter. Shows indirect air quality benefit from energy conservation.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years for energy-saving planting placements. Average reflects only the subset meeting proximity criteria.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only relevant for subset of trees meeting proximity criteria. Regional electricity sources heavily influence this metric—electricity savings in coal-powered regions avoid more emissions than savings in renewable-powered regions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Emphasizes environmental protection and cost savings for regional utilities.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">Heating Energy Saved: MBTU per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average heating energy saved or lost per tree over 25 years. Total MBTU divided by tree count. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Net result of windbreak benefit minus winter shade penalty on solar heat gain.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years for energy-saving placements. Can be positive (windbreak exceeds shade penalty) or negative (shade penalty exceeds windbreak benefit). </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only relevant for subset meeting proximity criteria. Average includes many trees providing zero benefit. Climate zone heavily influences results—can be negative in cold climates where winter sun blocking dominates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Emphasizes household benefit of tree planting.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
+                        <div class="widget-header">
+                            <span class="widget-name">Electricity Saved: kWh per Tree</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Average electricity saved or lost per tree over 25 years. Total kWh divided by tree count. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Includes cooling savings minus heating penalty from winter shade blocking solar heat gain.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average benefit per tree over 25 years for energy-saving placements. Can be positive (cooling savings exceed heating penalty) or negative (heating penalty dominates). Most trees provide zero benefit (not near buildings).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only relevant for subset meeting proximity criteria. Heating penalty applied as regional default regardless of actual building heating fuel type—conservative methodology may underestimate actual benefit.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Most useful in hot climates with long cooling seasons. Most useful for west/south building exposures. Can be negative in cold climates—review regional data before projecting. Emphasizes household benefit of tree planting.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Eco Benefit Value">
+                    <div class="group-title">Eco Benefit Value</div>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">Runoff Avoided: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of stormwater interception over 25 years, converted to USD2025. Based on avoided costs of stormwater treatment and management using regional rates from USFS Community Tree Guides. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The infrastructure cost savings from trees managing stormwater instead of engineered systems. Represents how much it would cost to handle this volume through gray infrastructure.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not include co-benefits like reduced combined sewer overflows, improved water quality, aquifer recharge, or flood damage prevention. Only values volume interception, not treatment or timing benefits. This means that actual benefits are likely greater.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Justify green infrastructure investments in stormwater master plans. Compare tree planting costs to pipe/basin construction. Support municipal budget requests and grant applications for tree programs tied to storm water management.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of carbon currently stored in tree biomass (wood, branches, leaves, roots), converted to USD2025. Based on federal social cost of carbon estimates (~$51/metric ton CO₂ with 3% discount rate), which monetize damages from climate change including agricultural losses, human health impacts, flood risk, and ecosystem degradation. Storage is valued cumulatively over 25 years—iTree's methodology for aggregating these values with NPV discounting is applied internally. Represents climate damage that would occur if this stored carbon were released to atmosphere.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The climate value of preserving existing trees. Based on the social cost of carbon—an estimate of economic damages from releasing one ton of CO₂ (including impacts like sea level rise, agricultural losses, and extreme weather). Shows the economic cost of releasing this stored carbon through tree removal, death, or decay beyond expected mortality rates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Social cost of carbon is contested—estimates range from under $50 to over $400 per metric ton CO₂ depending on discount rate and climate damage assumptions. iTree uses ~$51/ton (near the low end of this range), making these valuations conservative compared to many academic and policy estimates. Different federal administrations have used vastly different SCC values. The specific calculation iTree uses to aggregate cumulative 25-year storage values is not fully detailed in public documentation. Does not include co-benefits like reduced urban heat or air quality improvements. Value only persists while trees remain alive.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Calculate climate cost of proposed tree removal in development projects. Support tree preservation ordinances with economic data. Integrate into environmental review and permitting processes. Justify maintenance investments to prevent mortality.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">CO2 Removed from Atmosphere: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of CO₂ sequestered through photosynthesis over 25 years, converted to USD2025. Based on federal social cost of carbon estimates (~$51/metric ton CO₂ with 3% discount rate), which monetize avoided damages from climate change including agricultural losses, human health impacts, flood risk, and ecosystem degradation. Represents climate damage prevented by removing this CO₂ from the atmosphere through tree growth. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The climate mitigation value of tree growth. Shows economic benefit of planting and stewarding trees that actively capture carbon over 25 years.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Social cost of carbon is contested—estimates range from under $50 to over $400 per metric ton CO₂. iTree uses ~$51/ton (near the low end), making these valuations conservative. Does not include indirect benefits like reduced fossil fuel extraction or ocean acidification prevention beyond what's captured in the SCC damage estimates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Calculate net present value of tree planting programs for climate mitigation. Support carbon offset programs and climate action plans. Demonstrate climate ROI of urban forestry investments compared to other carbon reduction strategies.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">Air Pollutants Removed: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of air pollutant removal over 25 years, converted to USD2025. Valuation varies by pollutant: NO₂, O₃, PM2.5, and SO₂ use health impact modeling via EPA's BenMAP methodology, estimating avoided healthcare costs, productivity losses, and value of statistical life based on local population and epidemiological data; CO uses externality cost estimates representing societal costs not captured in market prices. Pollution removal rates vary by county based on local tree cover, weather, pollution concentrations, and boundary layer dynamics. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The public health and economic value of cleaner air from urban trees. Shows benefit of tree canopy in reducing air pollution-related illness, premature death, and productivity losses. Higher in areas with worse baseline air quality and higher population density. Benefits vary by pollutant type and local meteorological conditions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Health impact estimates use population-level epidemiological relationships and may not reflect individual outcomes. Only estimates pollution removal and concentration reduction—does not account for trees' effects on wind patterns that may increase local concentrations, potential pollution formation from tree emissions (VOCs), or health impacts from tree pollen. Assumes adequate soil moisture; may overestimate removal during drought for NO₂, SO₂, and O₃. Pollution concentration data often from single monitoring station representing entire area.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Justify tree planting in environmental justice communities with poor air quality. Support policies linking urban forestry to public health outcomes. Calculate cost-effectiveness of tree-based air quality strategies. Prioritize planting in high-traffic corridors or near pollution sources where removal rates are highest. Consider alongside pollutant emission data to understand net air quality impact.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">Powerplant Emissions Avoided: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of avoided power plant emissions over 25 years, converted to USD2025. When trees reduce building energy demand, power plants emit less pollution. Value based on: CO₂ and CH₄ use social cost of carbon (~$51/ton CO₂); other pollutants (NOₓ, SO₂, CO, VOCs, PM10, PM2.5) use externality cost estimates including health impacts, building/material damage, and crop losses. State-specific emission factors applied based on regional fuel mix and power generation sources. Only calculated for trees within 60 feet of residential buildings 3 stories or shorter. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The air quality value of energy conservation from strategically-placed trees. Shows combined climate and pollution benefits from reducing fossil fuel combustion at power plants. Larger in regions with coal/gas-heavy electricity generation.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset of trees meeting proximity criteria. Benefits heavily depend on regional electricity generation mix—renewable-heavy grids show much lower values. Emission factors are state averages and may not reflect local utility sources. Does not include direct pollutant removal by tree canopy (see Pollutants Removed Value). CH₄ emissions/value not yet incorporated in iTree.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Connect urban forestry to climate and air quality policy. Demonstrate co-benefits of residential energy efficiency. Prioritize planting in regions with fossil fuel-dominant electricity generation where avoided emissions are highest.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">Heating Energy Saved: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of heating energy saved or lost over 25 years, converted to USD2025. Based on avoided costs of residential heating fuels (weighted by state mix of natural gas, fuel oil, and wood/other) from windbreak effects minus increased costs from winter shade blocking beneficial solar heat gain. State-specific fuel costs and building fuel distribution applied. Only for trees within 60 feet of residential buildings 3 stories or shorter. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The net winter energy impact value from windbreak planting. Can be positive (windbreak benefit exceeds shade penalty) or negative (shade penalty dominates). Shows dollar value of heating bill changes for property owners.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset meeting proximity criteria. Energy prices vary regionally and fluctuate over time. Can be negative in cold climates where blocking winter sun outweighs windbreak benefits.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Calculate ROI for evergreen windbreak programs in moderate climates. Demonstrate heating savings for strategic north/northwest placements. Be cautious in cold climates—may show net costs rather than savings.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Individual Benefits" data-tab="Eco Benefit Value">
+                        <div class="widget-header">
+                            <span class="widget-name">Electricity Saved: Value</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Economic value of electricity saved or lost over 25 years, converted to USD2025. Based on state electricity rates applied to: reduced air conditioning demand from summer shade (positive) minus increased electric heating demand from winter shade blocking solar heat gain (negative, applied as regional default). Only for trees within 60 feet of residential buildings 3 stories or shorter. Adjusted for inflation and discounted to present value at 3%.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Net electricity cost impact from trees. Can be positive (cooling savings exceed heating penalty) or negative (heating penalty dominates). Shows dollar value of electricity bill changes, particularly in hot climates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Only applies to subset meeting proximity criteria. Electricity prices vary regionally and seasonally. Heating penalty applied as regional default—actual benefit may be higher if buildings use non-electric heating.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Calculate ROI for shade tree programs in hot climates with long cooling seasons. Support utility rebate programs. Demonstrate cooling cost savings. Can be negative in cold climates—review regional patterns before projecting benefits.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            
+            <div id="summary-benefit-value" class="reference-table collapsed" data-group="Summary Benefit Value">
+                <div class="table-header">Summary Benefit Value</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        High-level aggregated metrics that combine all benefit categories into single summary numbers. These widgets answer the question "What's the total value of our urban forest?" by summing across stormwater, carbon, energy, air quality, and health benefits. Includes total benefit value, average benefit per tree, and return on investment (ROI) calculations that compare benefit value to estimated planting and maintenance costs. These are your headline numbers for grant applications, executive summaries, and program impact reports.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group02-summary.png" alt="Summary Benefit Value Dashboard View">
+                        <div class="screenshot-caption">Summary Benefit Value widgets in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="Summary Metrics">
+                    <div class="group-title">Summary Metrics</div>
+                    
+                    <li class="widget-entry" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                        <div class="widget-header">
+                            <span class="widget-name">Total Benefit Value</span>
+                            <span class="widget-source">Source: iTree, GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Sum of benefit value across all benefit metrics for all trees with valid eco benefit input. Adjusted to USD2025, discounted to net present value at 3%, and reduced by mortality rate (1.5% annually) to account for expected tree losses. Includes both newly planted and previously inventoried trees.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The total economic return your urban forest delivers over 25 years. This is the headline number showing aggregate value across all services trees provide.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not subtract planting or maintenance costs (see ROI for net return). Does not include non-quantified benefits like aesthetics, property value, mental health, community cohesion, or wildlife habitat. Assumes trees survive at modeled mortality rate.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Lead with this in grant applications, budget requests, and program impact reports. Use to demonstrate that urban forestry is cost-effective infrastructure investment. Pair with ROI to show net financial benefit after accounting for costs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                        <div class="widget-header">
+                            <span class="widget-name">Benefit Value per Tree</span>
+                            <span class="widget-source">Source: iTree, GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Total Benefit Value divided by tree count. Shows average 25-year dollar value delivered per tree, adjusted to USD2025 with 3% NPV discount and mortality adjustment (1.5% annually). </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Average economic return per tree over 25 years. </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average masks wide variation—a few large, mature trees may deliver 10-100× the benefits of small trees. Does not show distribution or median values. Includes both high-performing and low-performing individual trees.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Project benefits of proposed planting programs: "Each tree will deliver ~$X over 25 years." Support species selection and site planning decisions. Calculate per-tree investment needed to justify program costs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                        <div class="widget-header">
+                            <span class="widget-name">Maintenance per Tree</span>
+                            <span class="widget-source">Source: USDA Regional Tree Guides</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Estimated planting and maintenance costs per tree over 25 years based on USDA regional cost models. Differentiated by tree size category (small, medium, large) and geographic region. Includes initial planting, establishment watering, pruning, mulching, and proportional share of eventual removal costs amortized over tree lifespan.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">The investment required to establish and maintain trees over 25 years. USDA annual maintenance cost summed for 25 years. Provides cost baseline for ROI calculations and budget planning.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Not based on Groundwork Affiliate actual planting and maintenance cost. Actual maintenance costs vary by management intensity, species requirements, and local labor rates. Does not include pest/disease treatment, storm damage repair, or liability costs. Assumes standard municipal forestry practices.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Budget for long-term tree stewardship programs. Calculate total program costs for funding requests. Compare against benefit value to demonstrate ROI. Inform staffing and equipment needs for maintenance programs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                        <div class="widget-header">
+                            <span class="widget-name">Return on Investment</span>
+                            <span class="widget-source">Source: iTree, GWUSA, USDA Regional Tree Guides</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Ratio of Total Benefit Value to estimated planting and maintenance costs over 25 years. Based on USDA regional cost models differentiated by tree size and region. Includes both initial planting costs and ongoing maintenance. Formula: Total Benefits ÷ Total Costs. Includes inventoried trees to show stewardship value.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">For every dollar spent on planting and maintaining trees, how many dollars of ecosystem services are returned. An ROI of 4.0 means $4 in benefits for every $1 invested.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not account for variation in actual maintenance practices—some programs maintain more intensively than USDA averages. Includes existing inventoried trees (unless filtered out) because stewardship investment still generates returns.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Financial justification for program funding. Answer the question "Are trees worth it?" for budget-conscious stakeholders. Shows urban forestry as smart public investment, not just environmental amenity. Compare to ROI of other municipal infrastructure.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Summary Benefit Value" data-tab="Summary Metrics">
+                        <div class="widget-header">
+                            <span class="widget-name">Acknowledgements &amp; Terms of Use</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Legal and attribution text acknowledging funding sources (USDA Forest Service Urban and Community Forestry Program), technical collaborators (USDA Forest Service iTree Eco API, Davey Tree), and data collection partners (Groundwork USA Affiliate Network). Includes terms of use specifying data source (iTree Eco API with peer-reviewed methodologies), data accuracy limitations (field inspection conditions, model estimates, local variability), appropriate use cases (planning, education, informational purposes only), and liability disclaimers. Defines data limitations and establishes that benefit values are estimates, not financial guarantees.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">This dashboard represents a collaborative effort between federal agencies, research institutions, local nonprofits, and community partners. The data comes from standardized scientific models applied to real field measurements, but includes inherent uncertainties from model assumptions, environmental variability, and changing tree conditions. Use this information for understanding general patterns and communicating program impact, not for precise property valuations or legal purposes.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content"><em>N/A</em></div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Read before using dashboard data in formal reports, grant applications, or public communications to understand limitations and proper attribution. Cite funding sources and technical partners when presenting data externally. Use disclaimer language when publishing benefit values to set appropriate expectations about precision and uncertainty. Reference these terms when questions arise about data accuracy or liability.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            
+            <div id="pie-chart-filters" class="reference-table collapsed" data-group="Pie Chart Filters">
+                <div class="table-header">Pie Chart Filters</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        Interactive filter controls that let you slice the dashboard data by different attributes. Use these to compare Inventoried vs New Planting trees, Public vs Private land, tree Condition categories, or Land Use types. When you select a filter, all other widgets update to show metrics for just that subset. Essential for analyzing which tree populations provide the greatest benefits, identifying priority areas for investment, or demonstrating impact by ownership or land use category.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group03-pie.png" alt="Pie Chart Filters Dashboard View">
+                        <div class="screenshot-caption">Pie Chart Filter widgets in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="Planting vs. Inventory Filter">
+                    <div class="group-title">Planting vs. Inventory Filter</div>
+                    
+                    <li class="widget-entry" data-group="Pie Chart Filters" data-tab="Planting vs. Inventory Filter">
+                        <div class="widget-header">
+                            <span class="widget-name">New Planting vs. Inventoried</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filter showing trees planted by your organization vs. trees that were already established when inventory began. "New Planting" means your organization planted it; "Inventoried" means it was already in the ground. This is about attribution, not age—a newly inventoried 50-year-old oak is "Inventoried."</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which benefits come from your planting efforts vs. the value you're stewarding in existing trees. Helps differentiate program impact from inherited assets.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Age and planting year are separate from this designation. A tree planted last year by another organization would be "Inventoried" if you didn't plant it. Does not indicate tree maturity or establishment date. Historical tree plantings by Groundwork Affiliates are considered "new plantings" even if they were planted 10 years ago (an old "new planting"). This language ("new planting" vs. "inventoried") was adopted for the field collection tool where it's application is clearer.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Track program-specific ROI (filter to New Plantings only). Show funders the direct impact of their investment. Justify both planting programs and maintenance of existing canopy. Compare benefit trajectories of new vs. mature trees.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Public vs. Private Filter">
+                    <div class="group-title">Public vs. Private Filter</div>
+                    
+                    <li class="widget-entry" data-group="Pie Chart Filters" data-tab="Public vs. Private Filter">
+                        <div class="widget-header">
+                            <span class="widget-name">Public vs. Private</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filter showing trees by ownership: publicly-owned land (parks, streets, municipal property) vs. privately-owned land (residential, commercial, institutional). Determined by data collectors during field inventory.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which sector's trees deliver the most benefits. Helps target programs and partnerships. Shows public investment in street trees vs. private property canopy contributions.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Ownership classification made during field work—may not match legal parcel data. Some institutional or quasi-public land may be classified as private. Doesn't indicate management responsibility or access rights.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Target partnerships with private landowners to increase canopy in underserved areas. Justify public investment in street tree programs vs. private property tree support. Calculate public vs. private sector benefit distribution for equity analysis. View benefits of residential planting programs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Condition Filter">
+                    <div class="group-title">Condition Filter</div>
+                    
+                    <li class="widget-entry" data-group="Pie Chart Filters" data-tab="Condition Filter">
+                        <div class="widget-header">
+                            <span class="widget-name">Tree Condition (count)</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filter showing tree count by health condition (Excellent, Good, Fair, Poor, Critical, Dead, Dying). Assessed by data collectors using standardized condition rating protocol during field inventory.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Overall forest health distribution. Identifies trees needing intervention (poor/critical condition) vs. healthy, high-performing trees. Tracks program success over time.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Condition ratings are subjective and vary by assessor training. Does not predict future mortality or diagnose specific problems. Dead/dying trees may still be included if not yet removed from inventory.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Prioritize maintenance for trees in poor/critical condition. Track forest health trends over time as indicator of program effectiveness. Identify areas with high mortality for replanting or management intervention. Demonstrate healthy trees have greater benefits thus justifying more intensive maintenance.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Land Use Filter">
+                    <div class="group-title">Land Use Filter</div>
+                    
+                    <li class="widget-entry" data-group="Pie Chart Filters" data-tab="Land Use Filter">
+                        <div class="widget-header">
+                            <span class="widget-name">Land Use</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filter showing trees by land use type (Residential, Commercial, Industrial, Parks, Institutional, etc.) as determined by data collectors during field inventory. This is observed land use, not legal zoning or parcel designation.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which land use types contain the most trees and generate the most benefits. Helps target planting and stewardship programs geographically.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Land use classification is observational by field staff, not from legal parcel layers or zoning maps. Categories may not match municipal land use planning designations. Mixed-use areas may be simplified to primary use.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify underserved land use types for targeted planting. Support land use planning with tree benefit data. Demonstrate value of trees in industrial/commercial areas. Compare residential vs. non-residential canopy and benefits.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            
+            <div id="misc.-benefit" class="reference-table collapsed" data-group="Misc. Benefit">
+                <div class="table-header">Misc. Benefit</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        Additional benefit visualizations that are outside other widget groups. Includes the Pollutants Removed pie chart (breaking down PM2.5, O₃, NO₂, SO₂, CO by proportion) and the Heat Illness widget (showing avoided hospitalizations and deaths from urban cooling). These widgets provide deeper insight into specific benefit categories—use the pollutant breakdown to target messaging to air quality concerns, and use heat illness prevention data to support climate adaptation and public health initiatives.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group04-misc.png" alt="Misc. Benefit Dashboard View">
+                        <div class="screenshot-caption">Misc. Benefit widgets in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="Benefit Breakdown">
+                    <div class="group-title">Benefit Breakdown</div>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Benefit Breakdown">
+                        <div class="widget-header">
+                            <span class="widget-name">Benefit Value Categories</span>
+                            <span class="widget-source">Source: iTree, GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Pie chart showing how Total Benefit Value is distributed across benefit categories (stormwater, carbon sequestration, carbon storage, air quality, energy, heat illness). Proportions driven by social cost of carbon (high for carbon) and value of statistical life (high for heat illness prevention).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which ecosystem services deliver the most economic value. Carbon and heat illness often dominate due to high social cost of carbon and VSL (value of statistical life) in health calculations.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Proportions reflect economic valuation methodology, not necessarily physical impact. High carbon value driven by social cost assumptions. High heat illness value uses conservative VSL estimates. Doesn't show which benefits matter most to local stakeholders.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify primary value drivers for program messaging. Understand why total value is distributed as it is. Explain to stakeholders that high carbon/health values reflect economic methodology, not physical measurement.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Benefit Breakdown">
+                        <div class="widget-header">
+                            <span class="widget-name">Pollutants Removed: Pounds</span>
+                            <span class="widget-source">Source: iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Pie chart showing pounds of each air pollutant removed (CO, NO₂, SO₂, O₃, PM2.5, PM10). Distribution depends on local air quality—polluted areas show more removal. O₃ (ozone) and PM2.5 often largest due to prevalence in urban air.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which specific pollutants your trees are removing. Helps connect to local air quality concerns (e.g., high PM2.5 near highways, high O₃ in summer smog).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Removal rates vary by local pollution levels—trees remove more where air is dirtier. Does not indicate whether pollution levels meet EPA standards. Trees reduce but don't eliminate pollutants; source control is still needed.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify which pollutants your forest removes most effectively to target communication. Emphasize PM2.5 for respiratory health advocates, ozone for air quality non-attainment areas. Compare your pollutant removal profile to local air quality challenges to demonstrate strategic tree planting value.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Benefit Breakdown">
+                        <div class="widget-header">
+                            <span class="widget-name">Avoided Heat Illness</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Count of heat-related hospitalizations and mortality cases prevented over 25 years. Based on Affiliate-specific incidence rates (avoided hospitalizations and deaths per tree annually) reverse-engineered from Earth Economics urban forestry analysis. Rates vary by region reflecting local climate severity and population vulnerability—ranging from 0.00005 to 0.033 hospitalizations per tree per year, and 0.00005 to 0.001 deaths per tree per year. Summed over 25 years with tree mortality adjustment.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Public health benefit of urban forest cooling during extreme heat events. Shows lives saved and healthcare costs avoided through temperature reduction.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This is a regional model, not tree-specific—can't attribute specific cases to individual trees. Uses Affiliate-specific rates that may not reflect micro-climate variations. </div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Link urban forestry to public health and climate adaptation. Support heat action plans and vulnerable population protection. Demonstrate life-saving value of trees. Justify tree planting in heat island priority areas.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Species (common)">
+                    <div class="group-title">Species (common)</div>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Species (common)">
+                        <div class="widget-header">
+                            <span class="widget-name">Species Count (common)</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing tree count by species using common names (Red Maple, Pin Oak, etc.). Reveals species diversity and dominance. High diversity generally indicates forest resilience.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which species are most abundant in your urban forest. Shows diversity. Identifies over-reliance on single species that creates vulnerability to pests/disease.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Count alone doesn't show tree size, health, or benefit delivery. A species with many small trees may contribute less than one with few large trees. Doesn't indicate whether species are appropriate for sites.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Track species diversity over time as forest health indicator. Identify monoculture risk (&gt;20% of any single species). Guide species selection for new plantings to increase diversity. Support pest/disease risk assessment.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Species (common)">
+                        <div class="widget-header">
+                            <span class="widget-name">Benefit Value per Species (common)</span>
+                            <span class="widget-source">Source: user input, iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing average 25-year benefit value (USD25) per tree by species (common names). Helps identify high-performing vs. low-performing species. Large-growing species typically show higher per-tree value.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which species deliver the most economic value per tree on average. Informs strategic planting decisions when maximizing benefits is the goal.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average value reflects both tree size and species characteristics. Fast-growing, large-canopy species rank high. Doesn't account for site appropriateness, maintenance needs, or longevity. High-value species may have higher costs.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Select high-value species for new plantings when site allows. Balance benefit potential with site constraints, diversity needs, and management capacity. Avoid over-planting high-value species at expense of diversity.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Species (scientific)">
+                    <div class="group-title">Species (scientific)</div>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Species (scientific)">
+                        <div class="widget-header">
+                            <span class="widget-name">Species Count (scientific)</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing tree count by species using scientific names (Acer rubrum, Quercus palustris, etc.). Same data as common names but uses standardized scientific nomenclature.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Species abundance using precise taxonomic names. Eliminates confusion from multiple common names for same species or same common name for different species.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Scientific names may be unfamiliar to general audiences. Same limitation as common name count—doesn't show size, health, or benefit contribution. Doesn't indicate site appropriateness.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Communicate with technical audiences (arborists, ecologists, researchers). Ensure precise species identification for pest/disease monitoring. Support research collaborations requiring standardized nomenclature. Compare to regional species lists.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Species (scientific)">
+                        <div class="widget-header">
+                            <span class="widget-name">Benefit Value per Species (scientific)</span>
+                            <span class="widget-source">Source: user input, iTree</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing average 25-year dollar value (USD25) per tree by species (scientific names). Identical data to common names but uses standardized scientific nomenclature for precision.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">High-performing species using precise taxonomic identification. Useful for technical planning documents and research applications.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Scientific names may be unfamiliar to non-technical audiences. Same limitation as common name analysis—reflects size and species traits, not site appropriateness or diversity needs.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Technical planning documents requiring precise species identification. Share with landscape architects, urban foresters, and researchers. Support species trials and performance monitoring using standardized nomenclature.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Affiliate">
+                    <div class="group-title">Affiliate</div>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Affiliate">
+                        <div class="widget-header">
+                            <span class="widget-name">Tree Count per Affiliate</span>
+                            <span class="widget-source">Source: user input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing total tree count for each Groundwork Affiliate in the Network. Only relevant for Network-level dashboard view showing multiple Affiliates.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which Affiliates have the largest inventories. Helps identify program scale differences across the Network. Shows investment in tree planting or inventory efforts.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Count alone doesn't indicate canopy coverage, tree health, or benefit delivery. Large count may include many small, young trees. Doesn't account for geographic area or population served.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Track Network-wide tree planting progress. Identify Affiliates needing inventory support or planting assistance. Celebrate program milestones. Support resource allocation across Network based on scale.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Affiliate">
+                        <div class="widget-header">
+                            <span class="widget-name">Total Eco Benefit Value ($)</span>
+                            <span class="widget-source">Source: user input, iTree, GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing Total Benefit Value for each Affiliate. Reflects both tree count and tree quality/size. Only relevant for Network-level dashboard view.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which Affiliates' urban forests deliver the most total economic value. Shows program impact across the Network. Larger, more mature forests typically rank higher.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Total value reflects both tree count and tree size/health. Large total may result from quantity or quality. Doesn't account for population served or geographic area. Climate and economic factors vary by region.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Demonstrate Network-wide program impact for national reporting. Identify high-performing Affiliates for best practice sharing. Support fundraising by showing aggregate Network value. Celebrate Affiliate success and justify program investments.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" data-group="Misc. Benefit" data-tab="Affiliate">
+                        <div class="widget-header">
+                            <span class="widget-name">Eco Benefit Value ($) per Tree</span>
+                            <span class="widget-source">Source: user input, iTree, GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Bar chart showing average benefit value per tree by Affiliate. Controls for tree count differences, revealing forest quality and management effectiveness across the Network.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which Affiliates have the highest-value trees on average. Reflects tree maturity, species mix, and site quality more than quantity. Shows stewardship effectiveness.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Average can mask wide variation within Affiliate. High average may result from a few very large trees. Different climates and economic regions affect baseline valuations. Doesn't indicate program efficiency.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Identify best practices from high-performing Affiliates. Support peer learning on species selection and stewardship. Benchmark Affiliate performance. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            
+            <div id="map-panel" class="reference-table collapsed" data-group="Map Panel">
+                <div class="table-header">Map Panel</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        The Map Panel contains two tabs. The first tab displays individual tree locations with pop-ups showing photos and detailed attribute data for each tree. Trees are visualized using proportional symbols based on their cumulative 25-year benefit value—larger symbols indicate higher-value trees. An alternative layer option shows trees symbolized by ROI instead. The second tab contains a table widget displaying the underlying tabular data for all trees. The 'Export Data' widget automatically filters to show only the current user's Affiliate data for security purposes, and respects any active dashboard filters (ownership, condition, land use, etc.).
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group05-map.png" alt="Map Panel Dashboard View">
+                        <div class="screenshot-caption">Map Panel in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="Map">
+                    <div class="group-title">Map</div>
+                    
+                    <li class="widget-entry" data-group="Map Panel" data-tab="Map">
+                        <div class="widget-header">
+                            <span class="widget-name">Map</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Interactive web map showing tree locations, benefit values, and spatial distribution. Allows visualization of benefit hotspots, gaps in canopy, and geographic patterns. Supports filtering by any dashboard criteria.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Where benefits are concentrated geographically. Reveals spatial inequities, benefit hotspots, and planting opportunities. Supports place-based program planning.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Map shows current tree locations only. Does not show opportunity sites for new planting or areas lacking canopy. Benefit calculations are per-tree, not canopy coverage per area.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Review and share back distribution of tree plantings and their benefits. Identify environmental justice communities for planting. Show stakeholders where benefits are concentrated. Support equity analysis of tree distribution. Guide strategic planting to fill gaps. Communicate program impact geographically.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="widget-group" data-tab="Export">
+                    <div class="group-title">Export</div>
+                    
+                    <li class="widget-entry" data-group="Map Panel" data-tab="Export">
+                        <div class="widget-header">
+                            <span class="widget-name">Export Data</span>
+                            <span class="widget-source">Source: GWUSA</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Export button to download filtered tree-by-tree data as CSV. Includes all benefit calculations, tree characteristics, and location data for trees currently displayed based on active filters. Automatically flters based on user's Groundwork Affiliate or Collaborating Organization.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Download your data for external analysis, reporting, or integration with other systems. Allows custom analysis beyond dashboard capabilities.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Exported data reflects current filter state—may not include all trees if filters are active. Large exports may take time to generate. Data is snapshot of current calculations and will not update as more trees are added.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Share data with partners, consultants, or researchers. Conduct custom analysis in GIS or statistical software. Generate Affiliate-specific reports. Support academic research collaborations. Create backup of benefit calculations for internal records.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            
+        </main>
+        
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-upper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Groundwork USA</h3>
+                    <p>Groundwork USA is a national network of local organizations working to bring about the sustained regeneration, improvement, and management of the physical environment by developing community-based partnerships.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="user-guide.html">User Guide</a></p>
+                    <p><a href="methodology.html">Methodology</a></p>
+                    <p><a href="widget-quick-reference.html">Widget Reference</a></p>
+                    <p><a href="data-dictionary.html">Data Dictionary</a></p>
+                    <p><a href="faqs.html">FAQs</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>For technical support or questions about your local tree inventory program, please contact your regional Groundwork affiliate.</p>
+                    <p><a href="https://groundworkusa.org" target="_blank">groundworkusa.org</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Groundwork USA. All rights reserved. | <a href="https://groundworkusa.org/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+    const allWidgets = document.querySelectorAll('.widget-entry');
+    const groupContainers = document.querySelectorAll('.reference-table');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchBox = document.getElementById('searchBox');
+    const resultCount = document.getElementById('resultCount');
+    const totalWidgets = allWidgets.length;
+    let activeGroup = 'all';
+    let activeTab = 'all';
+    
+    // Scroll to group function
+    function scrollToGroup(groupName) {
+        const groupId = groupName.toLowerCase().replace(/\s+/g, '-');
+        const groupElement = document.getElementById(groupId);
+        if (groupElement) {
+            // Don't expand the group - keep it collapsed
+            // Just scroll to it
+            groupElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+                window.scrollBy(0, -100); // Increased offset so header is visible
+            }, 300);
+        }
+    }
+
+    groupContainers.forEach(group => {
+        const header = group.querySelector('.table-header');
+        header.addEventListener('click', function(e) {
+            group.classList.toggle('collapsed');
+        });
+    });
+
+    searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        allWidgets.forEach(widget => {
+            const widgetName = widget.querySelector('.widget-name').textContent.toLowerCase();
+            const group = widget.getAttribute('data-group');
+            const tab = widget.getAttribute('data-tab');
+            
+            const matchesSearch = widgetName.includes(searchTerm) || searchTerm === '';
+            const matchesGroup = activeGroup === 'all' || group === activeGroup;
+            const matchesTab = activeTab === 'all' || tab === activeTab;
+            
+            if (matchesSearch && matchesGroup && matchesTab) {
+                widget.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                widget.classList.add('hidden');
+            }
+        });
+
+        resultCount.textContent = `${visibleCount} of ${totalWidgets} widgets`;
+    });
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            activeGroup = this.getAttribute('data-group');
+            activeTab = this.getAttribute('data-tab');
+            
+            // Scroll to the group section
+            if (activeGroup !== 'all') {
+                scrollToGroup(activeGroup);
+            }
+            
+            const searchTerm = searchBox.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            allWidgets.forEach(widget => {
+                const widgetName = widget.querySelector('.widget-name').textContent.toLowerCase();
+                const group = widget.getAttribute('data-group');
+                const tab = widget.getAttribute('data-tab');
+                
+                const matchesSearch = widgetName.includes(searchTerm) || searchTerm === '';
+                const matchesGroup = activeGroup === 'all' || group === activeGroup;
+                const matchesTab = activeTab === 'all' || tab === activeTab;
+                
+                if (matchesSearch && matchesGroup && matchesTab) {
+                    widget.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    widget.classList.add('hidden');
+                }
+            });
+
+            resultCount.textContent = `${visibleCount} of ${totalWidgets} widgets`;
+        });
+    });
+
+    allWidgets.forEach(widget => {
+        widget.addEventListener('click', function(e) {
+            this.classList.toggle('expanded');
+        });
+    });
+</script>
+
+</body>
+</html>
