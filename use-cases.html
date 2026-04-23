@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases - Groundwork USA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* USE CASE SPECIFIC STYLES */
+        
+        /* Expand/Collapse Buttons */
+        .expand-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .expand-btn {
+            background: var(--gw-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .expand-btn:hover {
+            background: var(--gw-dark-blue);
+        }
+        
+        /* Audience Tag Badges */
+        .audience-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        
+        .aud-donor { background: #fce4e4; color: #8b2c2c; }
+        .aud-grant { background: #e6d5f5; color: #5b2c7a; }
+        .aud-community { background: var(--gw-light-green); color: var(--gw-dark-green); }
+        .aud-planning { background: var(--gw-light-orange); color: #6b4423; }
+        .aud-city { background: var(--gw-light-blue); color: var(--gw-dark-blue); }
+        .aud-media { background: #fff3cd; color: #856404; }
+        .aud-workforce { background: #e8f4f8; color: #1e5a6e; }
+        .aud-youth { background: #ffe6f0; color: #8b1a5c; }
+        
+        /* Use Case Cards */
+        .use-case-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .use-case-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .use-case-item:hover {
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+            border-color: var(--gw-green);
+        }
+        
+        .use-case-item.hidden {
+            display: none;
+        }
+        
+        .use-case-header {
+            display: block;
+        }
+        
+        .use-case-title-block {
+            width: 100%;
+        }
+        
+        .use-case-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gw-dark-gray);
+            margin-bottom: 12px;
+        }
+        
+        .use-case-subtitle {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .use-case-details {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--gw-light-gray);
+        }
+        
+        .use-case-item.expanded .use-case-details {
+            display: block;
+        }
+        
+        .use-case-section {
+            margin-bottom: 25px;
+        }
+        
+        .use-case-section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gw-dark-gray);
+            margin-bottom: 12px;
+        }
+        
+        .use-case-section p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .use-case-audience {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .deliverable-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .deliverable-list li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--gw-dark-gray);
+        }
+        
+        .deliverable-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gw-dark-gray);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--gw-dark-gray);
+        }
+        
+        .step-list li:before {
+            content: counter(step-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: var(--gw-dark-gray);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .widget-link {
+            color: var(--gw-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--gw-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .widget-link:hover {
+            color: var(--gw-dark-blue);
+            border-bottom-style: solid;
+        }
+        
+        .search-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/logo-groundwork.png" alt="Groundwork USA">
+            </div>
+            <div class="header-tagline">
+                <h2>Use Cases</h2>
+                <p>Real-world applications of the dashboard</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOP NAVIGATION -->
+	<!-- TOP NAVIGATION -->
+	<nav class="main-nav">
+  		<ul>
+            <li><a href="index.html">Home</a></li>
+		    <li><a href="widget-ref.html">Widget Reference</a></li>
+            <li><a href="use-cases.html" class="active">Use Cases</a></li>
+            <li><a href="data-dictionary.html">Data Dictionary</a></li>
+   		 </ul>
+  	</nav>
+    
+    <!-- MAIN LAYOUT -->
+    <div class="page-container">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <h3>Filter by Audience</h3>
+            
+            <div class="expand-controls">
+                <button class="expand-btn" id="expandAll">Expand All</button>
+                <button class="expand-btn" id="collapseAll">Collapse All</button>
+            </div>
+            
+            <div class="sidebar-section">
+                <button class="filter-btn active" data-audience="all">
+                    All Use Cases <span class="filter-count">(8)</span>
+                </button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>By Audience</h4>
+                <ul>
+                    <li><button class="filter-btn" data-audience="donor">Donor Communications <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="grant">Grant Writing <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="community">Community Engagement <span class="filter-count">(2)</span></button></li>
+                    <li><button class="filter-btn" data-audience="planning">Planning & Strategy <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="city">City Partnerships <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="media">Media & Press <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="workforce">Workforce <span class="filter-count">(1)</span></button></li>
+                    <li><button class="filter-btn" data-audience="youth">Youth Programs <span class="filter-count">(1)</span></button></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            
+            <!-- SEARCH -->
+            <div class="search-container">
+                <input type="text" 
+                       id="searchBox" 
+                       class="search-box" 
+                       placeholder="Search use cases by keyword... (e.g., 'stormwater', 'grant', 'ROI')"
+                       autocomplete="off">
+                <div class="search-info">
+                    <span id="resultCount">7 use cases</span> | Click any card to expand details
+                </div>
+            </div>
+
+            <!-- USE CASE LIST -->
+            <ul class="use-case-list" id="useCaseList">
+                
+                <!-- USE CASE 1: DONOR APPEALS -->
+                <li class="use-case-item" data-audiences="donor community">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Year-End Donor Appeals & Impact Reports</h3>
+                            <p class="use-case-subtitle">Creating compelling impact reports that highlight urban forestry achievements for annual fundraising campaigns</p>
+                            <div>
+                                <span class="audience-badge aud-donor">Donor Communications</span>
+                                <span class="audience-badge aud-community">Community Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>You're assisting Groundwork Denver in writing a short impact section for their annual report highlighting their forestry program and achievements this past year. Provide some of the most impactful data for them to use in their report!</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Development staff, Communications teams, Affiliate leadership</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Total number of trees Denver planted in 2025 with support from the USDA-Forest Service grant</li>
+                                <li>2-3 environmental benefit metrics to highlight (e.g., CO2 removed, stormwater managed, air pollutants removed) with real-world comparisons (swimming pools of stormwater, Elephants' weight)</li>
+                                <li>ROI ($) & Per-tree value ($) of trees planted this year</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Summary paragraph to describe program success</li>
+                                <li>Design ideas for an infographic (or make one with a chart)</li>
+                                <li>A call to action (e.g., your $X donation for trees goes to $X impact) for their report</li>
+                                <li>Overview of the steps you took to produce your findings so they can follow the recipe next year</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter by your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>Filter by planting year (e.g., 2025) using the <a href="widget-ref.html#date-planted" class="widget-link">Date Planted</a></li>
+                                <li>Filter to show only planted trees using the <a href="widget-ref.html#tree-condition-filter" class="widget-link">Tree Condition</a></li>
+                                <li>Filter by funding source (USDA grant) using the <a href="widget-ref.html#usda-funded" class="widget-link">USDA Funded</a></li>
+                                <li>Review total tree count and key metrics in the <a href="widget-ref.html#total-benefit-value" class="widget-link">Total Eco-Benefit Value</a> widget</li>
+                                <li>Export environmental co-benefits data from the <a href="widget-ref.html#individual-benefits" class="widget-link">Individual Benefits</a></li>
+                                <li>Calculate cost-benefit ratio using the <a href="widget-ref.html#roi" class="widget-link">ROI</a> widget</li>
+                                <li>Generate real-world comparisons (gallons → swimming pools, pounds → elephants)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 2: GRANT WRITING -->
+                <li class="use-case-item" data-audiences="grant">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Climate Resilience Grant Applications</h3>
+                            <p class="use-case-subtitle">Supporting grant proposals with data on projected long-term climate impact of urban forestry investments</p>
+                            <div>
+                                <span class="audience-badge aud-grant">Grant Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>You're applying for a $100K climate resilience grant focused on reducing urban heat and managing stormwater with new trees with Groundwork Rhode Island. The application requires you to include data about the projected long-term climate impact of their urban forestry work. Assume that your new project will plant 150 trees.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Development staff, Grant writers, Program managers</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Total number of new trees planted across the Network</li>
+                                <li>Total number of new trees that Groundwork Rhode Island has planted</li>
+                                <li>Key climate benefits associated with stormwater and heat health impacts in Rhode Island</li>
+                                <li>The average per-tree ($) value, & new tree ROI ($)</li>
+                                <li>Estimate what the 25-year total impact will be for the 150 new trees using the average $ benefit per tree in Rhode Island (multiply!)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Findings summarized in headline statements/bulleted list, emphasizing how these relate to climate resilience</li>
+                                <li>Infographic plan (or creation) to help communicate the results visually</li>
+                                <li>Step-by-step explanation of how to reproduce your findings for GWRI to use independently for future proposals</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>View Network-wide tree planting totals using the <a href="widget-ref.html#total-benefit-value" class="widget-link">Total Eco-Benefit Value</a> widget</li>
+                                <li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>Filter to show only planted trees using the <a href="widget-ref.html#planted-vs-inventoried-filter" class="widget-link">Planted vs. Inventoried</a></li>
+                                <li>Review key climate benefits (stormwater, heat health) in the <a href="widget-ref.html#carbon-removed-pounds" class="widget-link">CO2 Removed from Atmosphere: Pounds</a> widget</li>
+                                <li>Calculate average benefit per tree and ROI using the <a href="widget-ref.html#runoff-per-tree" class="widget-link">Runoff Avoided: Gallons per Tree</a> widget</li>
+                                <li>Multiply average benefit × 150 planted trees to project future impact</li>
+                                <li>Export carbon sequestration data from the <a href="widget-ref.html#carbon-stored-pounds" class="widget-link">CO2 Equivalent of Carbon Stored: Pounds</a> widget</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 3: COMMUNITY ENGAGEMENT -->
+                <li class="use-case-item" data-audiences="community">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Community Event Flyers & Neighborhood Storytelling</h3>
+                            <p class="use-case-subtitle">Translating technical benefits data into accessible, memorable talking points for local audiences</p>
+                            <div>
+                                <span class="audience-badge aud-community">Community Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>You're helping Groundwork Richmond, CA create a simple one-page flyer to hand out at an event to showcase their urban forestry efforts that will be attended by mostly volunteers and community members.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Communications teams, Event coordinators, Volunteer managers</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>How many new trees RCA has planted</li>
+                                <li>Areas where RCA is planting a lot of trees (Street names, Parks, Schools) - zoom into the map to find places of interest!</li>
+                                <li>Top climate benefits their trees provide - highlight three big ecobenefits and their real-world comparisons</li>
+                                <li>Long-term impact of trees on a climate challenge (pick one: air pollution, urban heat health outcomes, or stormwater)</li>
+                                <li>Average dollar value and ROI on new trees planted</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Outline the design of an infographic/one-page flyer with headline statements based on your findings</li>
+                                <li>Identify social media/areas/neighborhoods/places of interest where these flyers could go</li>
+                                <li>Consider how to make this more accessible to different audiences</li>
+                                <li>Provide the steps and an explanation of how to recreate this for future events with other Affiliates in mind</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>View total trees planted in the <a href="widget-ref.html#total-benefit-value" class="widget-link">Total Eco-Benefit Value</a> widget</li>
+                                <li>Zoom into the <a href="widget-ref.html#map" class="widget-link">Map</a> to identify high-concentration planting areas (streets, parks, schools)</li>
+                                <li>Review top 3 climate benefits in the <a href="widget-ref.html#benefit-categories" class="widget-link">Benefit Categories</a> widget</li>
+                                <li>Select one climate challenge (air, heat, or flooding) and export long-term impact data</li>
+                                <li>Calculate average dollar value and ROI using the <a href="widget-ref.html#roi" class="widget-link">ROI</a></li>
+                                <li>Generate real-world comparisons for selected benefits</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 4: TREE PLANTING STRATEGY -->
+                <li class="use-case-item" data-audiences="planning">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Tree Planting Strategy & Species Selection</h3>
+                            <p class="use-case-subtitle">Using performance data to identify which species and locations deliver maximum environmental benefits</p>
+                            <div>
+                                <span class="audience-badge aud-planning">Planning & Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>You're assisting Groundwork Jacksonville with planning future urban forestry projects and helping them choose which tree species to use that maximize environmental benefits and community economic impact.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Program planners, Urban foresters, Affiliate leadership</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Total number of trees that Jacksonville has recorded</li>
+                                <li>Total number of new trees planted</li>
+                                <li>Average $ value per new tree and their ROI</li>
+                                <li>Top three beneficial tree species in Jacksonville as indicated by their Average 25-Year Benefit Value per species</li>
+                                <li>Additional information about these Jacksonville-specific species from https://plants.usda.gov/ website (expected height, shade, hardiness, resistance to diseases)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Draft infographic summarizing the average $ value per tree, ROI, and images of the top 3 local species</li>
+                                <li>Key information about those species from the USDA website</li>
+                                <li>Step-by-step guide on how to access this information in the dashboard for Jacksonville or other Affiliates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>View total tree count and planted trees in the <a href="widget-ref.html#total-benefit-value" class="widget-link">Total Eco-Benefit Value</a></li>
+                                <li>Calculate average benefit per tree and ROI using the <a href="widget-ref.html#benefit-per-tree" class="widget-link">Benefit Value per Tree</a> widget</li>
+                                <li>Review Network-wide top species using the <a href="widget-ref.html#species-value-common" class="widget-link">Benefit Value per Species (Common Name)</a> widget</li>
+                                <li>Filter to your affiliate and view local top species by average 25-year benefit value</li>
+                                <li>Export species list and research each on <a href="https://plants.usda.gov/" class="widget-link" target="_blank">USDA Plants Database</a></li>
+                                <li>Compile species profiles with expected height, shade, hardiness, and disease resistance</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 5: CITY BUDGET ENGAGEMENT -->
+                <li class="use-case-item" data-audiences="city">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">City Budget Engagement & ROI Justification</h3>
+                            <p class="use-case-subtitle">Providing municipal decision-makers with ROI data to justify continued investment in urban forestry programs</p>
+                            <div>
+                                <span class="audience-badge aud-city">City Partnerships</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>You're assisting Groundwork Lawrence in making the case for their City to increase budgetary investment in trees for their community. The City Manager is more concerned about potholes than tree health!</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Advocacy staff, City partnership coordinators, Affiliate leadership</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Number of trees recorded</li>
+                                <li>Number of new trees planted</li>
+                                <li>Key environmental co-benefits relevant to city infrastructure and public health</li>
+                                <li>Total ecobenefits value ($), per-tree value ($), and ROI for new trees ($)</li>
+                                <li>Groundwork Lawrence's per-tree 25-year cost of maintenance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Slides about Groundwork Lawrence's forestry impact, highlighting the budgetary need and longevity of tree program</li>
+                                <li>Explanation that ROI includes projections of future maintenance, and without that support, the 25-year impacts may reduce or disappear</li>
+                                <li>Proposed annual budget amount to support the maintenance of GWL's new trees</li>
+                                <li>Step-by-step instructions on how to access this information for Groundwork Lawrence to use in the future</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>View total trees and planted trees in the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a> widget</li>
+                                <li>Review infrastructure-relevant benefits (stormwater management, pavement protection) in the <a href="widget-ref.html#runoff-value" class="widget-link">Runoff Avoided: Value</a> widget</li>
+                                <li>Calculate per-tree ROI including future maintenance projections</li>
+                                <li>Estimate annual maintenance costs using regional USDA community forestry guide data</li>
+                                <li>Export public health benefits (air quality, heat illness reduction)</li>
+                                <li>Create presentation showing 25-year benefit trajectory with/without maintenance</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 6: MEDIA INTERVIEWS -->
+                <li class="use-case-item" data-audiences="media">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Media Interviews & Public Health Messaging</h3>
+                            <p class="use-case-subtitle">Arming spokespeople with credible, cite-able statistics for press interviews and public statements</p>
+                            <div>
+                                <span class="audience-badge aud-media">Media & Press</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>A national news reporter has reached out for an interview during a heat wave that is affecting nearly the entire country. Provide some sticky public health-specific information about the Groundwork Network's new trees and 25-year impact potential.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Communications teams, Spokespeople, Affiliate leadership</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Number of new trees planted</li>
+                                <li>Health-relevant metrics for these new trees' 25-year impact: the number of avoided illnesses and deaths</li>
+                                <li>Additional benefits related to air quality improvement in a real-world comparison</li>
+                                <li>Total Value per tree and ROI on new trees planted</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Three talking points and one memorable 'catch phrase' for the affiliate to use in their interview</li>
+                                <li>Suggested infographic design to share the impact data using a chart or picture</li>
+                                <li>Step-by-step explanation of how to reproduce your findings</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>View Network-wide planted trees in the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>Review heat health metrics (hospitalizations avoided, deaths prevented) in the <a href="widget-ref.html#heat-illness" class="widget-link">Heat Illness Avoided: Cases</a> widget</li>
+                                <li>Export 25-year cumulative health impact projections</li>
+                                <li>Review air quality improvement data in the <a href="widget-ref.html#pollutants-removed-pounds" class="widget-link">Air Pollutants Removed: Pounds</a> widget</li>
+                                <li>Calculate total ROI for new tree investments using the <a href="widget-ref.html#roi" class="widget-link">ROI</a> widget</li>
+                                <li>Craft talking points emphasizing health impacts and economic value</li>
+                                <li>Develop memorable comparison (e.g., "preventing X hospital visits annually")</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 7: PROPOSAL WRITING SUPPORT -->
+                <li class="use-case-item" data-audiences="grant planning">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Estimating Future Project Impact for Proposals</h3>
+                            <p class="use-case-subtitle">Using existing tree performance data to project the climate impact of proposed new planting projects</p>
+                            <div>
+                                <span class="audience-badge aud-grant">Grant Writing</span>
+                                <span class="audience-badge aud-planning">Planning & Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>Proposed tree planting projects need projected impact estimates to justify investment. Use per-tree averages from your existing inventory to forecast benefits from planned plantings.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Grant writers, Program planners, Development staff</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>Per-tree average metrics for your affiliate (gallons per tree, carbon per tree, pollutants per tree)</li>
+                                <li>Benefit Value per Tree ($) for calculating total economic value</li>
+                                <li>Maintenance per Tree costs for ROI calculations</li>
+                                <li>Species-specific performance data if you have planned species mix</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Project proposal showing estimated benefits over 25 years</li>
+                                <li>Projected ecosystem services (stormwater, carbon, air quality, heat)</li>
+                                <li>Estimated economic value and ROI for proposed planting</li>
+                                <li>Appropriately caveated projections based on your existing forest performance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>Filter to new plantings only using the <a href="widget-ref.html#planted-vs-inventoried-filter" class="widget-link">Planted vs. Inventoried</a></li>
+                                <li>Calculate average 25-year benefit per tree in your region</li>
+                                <li>Multiply average benefit × proposed tree quantity (e.g., 150 trees)</li>
+                                <li>Break down projected benefits by category (carbon, stormwater, air quality, heat)</li>
+                                <li>Calculate projected ROI using regional per-tree maintenance costs</li>
+                                <li>Export projections for inclusion in grant narrative</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- USE CASE 8: YOUTH PROGRAM OUTCOMES -->
+                <li class="use-case-item" data-audiences="workforce youth">
+                    <div class="use-case-header">
+                        <div class="use-case-title-block">
+                            <h3 class="use-case-title">Youth Program Outcomes & Recognition</h3>
+                            <p class="use-case-subtitle">Game-ify tree inventory programs with Green Teams through friendly competition and data-driven recognition</p>
+                            <div>
+                                <span class="audience-badge aud-workforce">Workforce</span>
+                                <span class="audience-badge aud-youth">Youth Programs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case-details">
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Scenario</h4>
+                            <p>Groundwork Hudson Valley is "game-ifying" its tree inventory program with their Green Team youth. Specifically, they want to give out awards to groups of youth that accomplished several milestones as part of their tree inventory effort.</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Audience</h4>
+                            <p class="use-case-audience">Youth program coordinators, Environmental educators, Green Team leaders</p>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Find</h4>
+                            <ul class="deliverable-list">
+                                <li>2024 vs. 2025 - which year's Green Team inventoried more trees?</li>
+                                <li>Which team inventoried the most trees? Which team documented the trees with the highest per-tree value ($)?
+                                    <ul style="margin-top: 8px; margin-left: 20px;">
+                                        <li><strong>Team 1:</strong> abrilperez_gwhv, cesarpaul_gwhv, edwinmeija_gwhv, giuliacancro_gwhv, isabellagarrison_gwhv</li>
+                                        <li><strong>Team 2:</strong> alexanderhall_gwhv, emelydelossantos_gwhv, keontemorris_gwhv, kimberlybravo_gwhv, shennaiyarose_gwhv</li>
+                                        <li><strong>Team 3:</strong> oyebowaleoyekola_gwhv, pamelasantanacalderon_gwhv, philippeyahia_gwhv, tatiachxeidze_gwhv, traceybostic_gwhv</li>
+                                    </ul>
+                                </li>
+                                <li>What species of tree was the most counted for each team, and how many did they count?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">What You'll Produce</h4>
+                            <ul class="deliverable-list">
+                                <li>Generate the 'superlatives' for Groundwork Hudson Valley's Green Teams by year and by team with a trophy infographic</li>
+                                <li>Find imagery from the https://plants.usda.gov/ website for each of the team's 'superlative' tree and some quick facts about the species</li>
+                                <li>Step-by-step instructions on how to reproduce your findings</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-case-section">
+                            <h4 class="use-case-section-title">Step-by-Step</h4>
+                            <ol class="step-list">
+<li>Filter to your affiliate using the <a href="widget-ref.html#groundwork-affiliate" class="widget-link">Groundwork Affiliate</a></li>
+                                <li>Use the <a href="widget-ref.html#date-recorded" class="widget-link">Date Recorded</a> filter to compare 2024 vs. 2025 inventory totals</li>
+                                <li>Filter by individual teams using the <a href="widget-ref.html#created-by-user" class="widget-link">Created By User</a> filter (Team 1, Team 2, Team 3)</li>
+                                <li>Review <a href="widget-ref.html#total-benefit-value" class="widget-link">Total Eco-Benefit Value</a> for each team to identify which team inventoried most trees</li>
+                                <li>Calculate per-tree value for each team using <a href="widget-ref.html#benefit-per-tree" class="widget-link">Benefit Value per Tree</a> to find highest-value team</li>
+                                <li>Review <a href="widget-ref.html#species-count-common" class="widget-link">Species Count (Common Name)</a> to identify most-counted species per team</li>
+                                <li>Research winning species on <a href="https://plants.usda.gov/" class="widget-link" target="_blank">USDA Plants Database</a> for fun facts and imagery</li>
+                                <li>Create award certificates or infographics highlighting team superlatives and achievements</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-upper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Groundwork USA</h3>
+                    <p>Groundwork USA is a national network of local organizations working to bring about the sustained regeneration, improvement, and management of the physical environment by developing community-based partnerships.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="widget-ref.html">Widget Reference</a></p>
+                    <p><a href="use-cases.html">Use Cases</a></p>
+                    <p><a href="data-dictionary.html">Data Dictionary</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>For technical support or questions about your local tree inventory program, please contact your regional Groundwork affiliate.</p>
+                    <p><a href="https://groundworkusa.org" target="_blank">groundworkusa.org</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Groundwork USA. All rights reserved. | <a href="https://groundworkusa.org/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Get DOM elements
+        const searchBox = document.getElementById('searchBox');
+        const resultCount = document.getElementById('resultCount');
+        const allUseCaseItems = document.querySelectorAll('.use-case-item');
+        const totalUseCases = allUseCaseItems.length;
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const expandAllBtn = document.getElementById('expandAll');
+        const collapseAllBtn = document.getElementById('collapseAll');
+        
+        let activeFilter = 'all';
+
+        // Search functionality
+        searchBox.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            allUseCaseItems.forEach(item => {
+                const title = item.querySelector('.use-case-title').textContent.toLowerCase();
+                const subtitle = item.querySelector('.use-case-subtitle').textContent.toLowerCase();
+                const details = item.querySelector('.use-case-details').textContent.toLowerCase();
+                const audiences = item.getAttribute('data-audiences').toLowerCase();
+                
+                const matchesSearch = title.includes(searchTerm) || 
+                                     subtitle.includes(searchTerm) || 
+                                     details.includes(searchTerm) ||
+                                     audiences.includes(searchTerm) ||
+                                     searchTerm === '';
+                
+                const matchesFilter = activeFilter === 'all' || audiences.includes(activeFilter);
+                
+                if (matchesSearch && matchesFilter) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            const plural = visibleCount === 1 ? 'use case' : 'use cases';
+            resultCount.textContent = `${visibleCount} ${plural}`;
+        });
+
+        // Audience filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active state
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Get selected audience
+                activeFilter = this.getAttribute('data-audience');
+                
+                // Re-filter
+                const searchTerm = searchBox.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                allUseCaseItems.forEach(item => {
+                    const title = item.querySelector('.use-case-title').textContent.toLowerCase();
+                    const subtitle = item.querySelector('.use-case-subtitle').textContent.toLowerCase();
+                    const details = item.querySelector('.use-case-details').textContent.toLowerCase();
+                    const audiences = item.getAttribute('data-audiences').toLowerCase();
+                    
+                    const matchesSearch = title.includes(searchTerm) || 
+                                         subtitle.includes(searchTerm) || 
+                                         details.includes(searchTerm) ||
+                                         audiences.includes(searchTerm) ||
+                                         searchTerm === '';
+                    
+                    const matchesFilter = activeFilter === 'all' || audiences.includes(activeFilter);
+                    
+                    if (matchesSearch && matchesFilter) {
+                        item.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+
+                const plural = visibleCount === 1 ? 'use case' : 'use cases';
+                resultCount.textContent = `${visibleCount} ${plural}`;
+            });
+        });
+
+        // Click to expand/collapse use case details
+        allUseCaseItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Don't toggle if clicking a link
+                if (e.target.tagName === 'A') return;
+                
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // Expand all button
+        expandAllBtn.addEventListener('click', function() {
+            allUseCaseItems.forEach(item => {
+                if (!item.classList.contains('hidden')) {
+                    item.classList.add('expanded');
+                }
+            });
+        });
+
+        // Collapse all button
+        collapseAllBtn.addEventListener('click', function() {
+            allUseCaseItems.forEach(item => {
+                item.classList.remove('expanded');
+            });
+        });
+    </script>
+
+</body>
+</html>

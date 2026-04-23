@@ -283,6 +283,30 @@
             font-weight: 600;
         }
         
+        .expand-collapse-controls {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .expand-collapse-controls button {
+            flex: 1;
+            padding: 8px 12px;
+            background: var(--gw-light-gray);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            color: var(--gw-dark-gray);
+        }
+        
+        .expand-collapse-controls button:hover {
+            background: var(--gw-green);
+            color: white;
+        }
+        
         .hidden {
             display: none !important;
         }
@@ -313,18 +337,16 @@
             </div>
         </div>
     </header>
-
-    <nav class="main-nav">
-    <ul>
+	
+	<nav class="main-nav">
+  		<ul>
             <li><a href="index.html">Home</a></li>
-			<li><a href="user-guide.html">User Guide</a></li>
-			<li><a href="methodology.html">Methodology</a></li>
 		    <li><a href="widget-ref.html" class="active">Widget Reference</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
             <li><a href="data-dictionary.html">Data Dictionary</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-     </ul>
-    </nav>
-
+   		 </ul>
+  	</nav>
+   
     <div class="page-container">
         
         <aside class="sidebar">
@@ -332,12 +354,26 @@
             
             <div class="sidebar-section">
                 <button class="filter-btn active" data-group="all" data-tab="all">
-                    All Widgets <span class="filter-count">(49)</span>
+                    All Widgets <span class="filter-count">(59)</span>
                 </button>
             </div>
             
             <div class="sidebar-section">
+                <h4>Expand / Collapse</h4>
+                <div class="expand-collapse-controls">
+                    <button id="expandAll">Expand All</button>
+                    <button id="collapseAll">Collapse All</button>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
                 <h4>Groups &amp; Tabs</h4>
+                
+                <div class="group-filter">
+                    <button class="filter-btn" data-group="Filter Sidebar" data-tab="all">
+                        Filter Sidebar <span class="filter-count">(10)</span>
+                    </button>
+                </div>
                 
                 <div class="group-filter">
                     <button class="filter-btn" data-group="Individual Benefits" data-tab="all">
@@ -435,10 +471,339 @@
                        placeholder="Search widgets by name... (e.g., 'Runoff', 'Carbon', 'Species')"
                        autocomplete="off">
                 <div class="search-info">
-                    <span id="resultCount">49 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
+                    <span id="resultCount">59 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
                 </div>
             </div>
             
+            
+            <div id="filter-sidebar" class="reference-table collapsed" data-group="Filter Sidebar">
+                <div class="table-header">Filter Sidebar</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        The primary filter controls for narrowing dashboard data to specific subsets. Start with Groundwork Affiliate to view your organization's trees, then layer additional filters to refine your analysis. Date Recorded tracks when trees were added to the database (useful for inventory event tracking), while Date Planted shows actual planting dates for cohort analysis. USDA Funded and Local Funding Source filters support grant reporting. Created By User enables quality control and workload tracking. Planted vs. Inventoried distinguishes your organization's planting impact from inherited canopy stewardship. Tree Condition identifies trees needing maintenance intervention. Collaborating Organization attributes trees to partnership projects. Species Common Name enables species-specific analysis and planning. All filters are cumulative—select multiple criteria to progressively narrow your view and answer specific questions about your urban forest.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group06-filter.png" alt="Filter Sidebar Dashboard View">
+                        <div class="screenshot-caption">Filter Sidebar in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="all">
+                    
+                    <li class="widget-entry" id="groundwork-affiliate" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Groundwork Affiliate</span>
+                            <span class="widget-source">Source: User selection</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Primary filter showing trees by Groundwork Affiliate organization. Single selection dropdown. For Groundwork Affiliate users, defaults to Network-wide view so Affiliates can see their impact as part of the broader Network. Users from collaborating organizations default to filtered view showing only their organization's records. GWUSA staff have access to full list of Affiliate filters. When an Affiliate is selected, the map automatically zooms and pans to that organization's geographic service area.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which Groundwork Affiliate planted or inventoried the trees. This is typically the first filter you'll use. Shows your organization's trees in context of the broader Network. Default view lets Affiliates see both their contribution and total Network impact.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not indicate whether the Affiliate physically planted the tree or managed planting through partners/contractors. Some collaborative projects may be attributed to the lead Affiliate. Does not show historical organizational changes (trees planted before an Affiliate joined the Network).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Start here to view your organization's data. Use Network view for grant applications showing collective impact. Filter to single Affiliate for organization-specific reporting and budget justification. Compare your Affiliate's metrics to Network averages.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="date-recorded" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Date Recorded</span>
+                            <span class="widget-source">Source: System-generated</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filters by date range indicating when the tree record was created in the database system. This is the data entry timestamp, not the planting date. Automatically recorded when field data collectors submit tree information or when historical data is imported.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">When the tree was added to the inventory database. Useful for tracking data collection efforts, volunteer event outputs, or batch imports of historical records. Shows inventory build-out timeline.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">This does not indicate when the tree was planted. A 50-year-old tree inventoried yesterday will have yesterday's date. For newly planted trees, date recorded often approximates planting date, but delays between planting and data entry can occur. Imported historical data may all share the same import date.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Track data collection progress over time. Identify which trees were added during specific inventory events or volunteer days. Filter to recent entries to review new data for quality control. Separate newly collected data from historical imports.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="usda-funded" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">USDA Funded</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Yes/No filter showing trees planted or inventoried as part of the GWUSA USDA Forest Service Urban and Community Forestry Program grant. Designated by data collectors during field inventory or data import based on funding source documentation.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which trees were supported by federal USDA funding. Essential for grant reporting, compliance, and impact documentation. Shows return on federal investment in urban forestry.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not indicate percentage of funding (some trees may have mixed funding sources with USDA as partial support). USDA designation may apply to either planting costs or inventory costs, not necessarily both. Historical data may have incomplete funding attribution.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Generate USDA grant reports showing trees planted, benefits delivered, and ROI on federal investment. Filter to USDA trees for federal reporting requirements. Demonstrate program impact to USDA Forest Service. Track grant-funded tree performance over time.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="created-by-user" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Created By User</span>
+                            <span class="widget-source">Source: System-generated</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Multi-select filter showing trees by the user account that created the database record. Reflects who entered the data, not necessarily who planted or inventoried the tree in the field. Useful for tracking data collector activity and quality control by individual or team.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which staff member, volunteer, or partner organization entered the tree data. Shows workload distribution across data collectors. Helps identify who to contact for data quality questions or field verification.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">User who created the record may not be the person who collected field data (data entry staff may input from paper forms). Does not indicate tree planter, just database entry user. User accounts may represent organizations rather than individuals.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Track individual data collector productivity during inventory events. Perform quality control review by filtering to specific users. Identify which team members need additional training based on error patterns. Acknowledge volunteer contributions by showing trees they recorded.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="planted-vs-inventoried-filter" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Planted vs. Inventoried</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filter distinguishing trees planted by your organization versus pre-existing trees that were inventoried. "Planted" means your organization physically planted the tree. "Inventoried" means the tree was already established when you found it. This is about attribution, not age—a newly inventoried 100-year-old oak is "Inventoried." Assessed by data collectors during field work. A tree planted by your organization 10 years ago is "Planted."</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which benefits come from your planting efforts versus the value you're stewarding in existing canopy. Shows your program's direct tree planting impact separate from inherited urban forest assets. Critical for calculating true ROI on planting investments.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Age and planting date are separate from this designation. A tree planted last year by a different organization would be "Inventoried" if you didn't plant it. Does not indicate tree maturity or establishment success. Historical tree plantings by Groundwork Affiliates (even 10+ years ago) are still considered "Planted."</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Filter to "Planted" only to show funders the direct impact of their tree planting investment. Calculate program-specific ROI excluding inherited assets. Track your organization's planting program performance over time. Use "Inventoried" to demonstrate stewardship value of maintaining existing canopy. Compare benefit trajectories of your planted trees versus mature inventoried trees.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="date-planted" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Date Planted</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Filters by the date a tree was planted in the ground. Recorded manually by data collectors during field inventory based on planting records, tree tags, or estimated from size/condition. May be approximate for older trees. Calendar date picker allows selection of specific date ranges (year, season, grant period, etc.).</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">When the tree was actually planted. Essential for analyzing planting program performance by cohort, tracking establishment success, filtering to specific grant periods, or creating year-over-year planting comparisons. Shows program timeline and planting momentum.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">May be incomplete for historically appended data where planting dates were not documented. Dates for inventoried trees (not planted by your organization) may be estimates based on size/records, not precise planting dates. Data quality depends on record-keeping practices and institutional memory.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Filter to specific years for annual planting reports (e.g., "trees planted in 2025"). Track grant-funded cohorts by filtering to grant period date ranges. Analyze establishment survival by comparing recent plantings to older cohorts. Create year-over-year planting trend charts. Generate seasonal planting reports.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="tree-condition-filter" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Tree Condition</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Multi-select filter showing trees by health assessment (Excellent, Good, Fair, Poor, Critical, Dying, Dead). Assessed by data collectors using standardized condition rating protocol during field inspections. Rating considers crown dieback, structural defects, pest/disease symptoms, and overall vigor.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Overall forest health distribution across your inventory. Identifies trees needing urgent intervention (Poor/Critical) versus healthy high-performers. Shows program success at maintaining tree health. Tracks mortality and establishment success for recently planted trees.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Condition ratings are somewhat subjective and vary by assessor training and experience. Ratings are point-in-time snapshots—conditions change with seasons, weather, and management. Does not diagnose specific problems or predict mortality rates. Dead/dying trees may still appear in inventory if not yet removed from database.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Prioritize maintenance resources by filtering to Poor/Critical condition trees. Generate work orders for trees needing intervention. Track establishment success of recent plantings by reviewing condition distribution. Monitor forest health trends over time by comparing condition assessments across years. Demonstrate that healthy trees deliver greater benefits, justifying intensive maintenance investments. Identify geographic areas with declining tree health for targeted intervention.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="collaborating-organization" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Collaborating Organization</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Multi-select filter showing trees associated with specific partner organizations that collaborated on planting or inventory work. Partners may include municipal agencies, schools, community groups, or other nonprofits. Designated by data collectors based on partnership agreements and project records.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which partner organizations contributed to tree planting or inventory efforts. Shows collaborative project outputs and partnership impact. Helps attribute trees to specific collaborative initiatives for joint reporting.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not indicate level of partner involvement (lead vs. support role). Multiple organizations may have collaborated on same trees but only one may be recorded. Partnership designation may reflect funding source, planting labor, site access, or other contributions—not standardized. Historical data may have incomplete partner attribution.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Generate partner-specific impact reports for collaborative projects. Filter to partner organizations for joint grant reporting or MOU deliverables. Demonstrate partnership value to funders supporting collaborative work. Track which partnerships generated most tree planting activity. Support relationship management by showing tangible outputs from each collaboration.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="local-funding-source" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Local Funding Source</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Multi-select filter showing trees by local (non-federal) funding sources. Categories are Affiliate-specific and created by each organization via the urban forestry management system. May include foundation grants, municipal contracts, corporate sponsorships, individual donations, or local government programs.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which local funding sources supported tree planting beyond federal USDA grants. Shows funding diversity and local resource mobilization. Tracks return on investment for specific local funders or funding programs.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Funding categories are not standardized across Affiliates—each organization defines their own local sources. Does not indicate funding amounts or cost-sharing percentages. Some trees may have multiple funding sources but only one recorded. Historical trees may have incomplete funding attribution.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Generate funder-specific impact reports for local foundation grants or corporate partnerships. Track which local funding sources generated most tree activity. Demonstrate ROI to local funders. Support fundraising by showing impact of past local investments. Identify funding diversification opportunities by reviewing current mix. Filter for annual reports to local government or community development agencies.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="widget-entry" id="species-common-name" data-group="Filter Sidebar" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Species Common Name</span>
+                            <span class="widget-source">Source: User input</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">Multi-select filter showing trees by common species names (Red Maple, Pin Oak, Honey Locust, etc.). Species identified by data collectors during field inventory using dichotomous keys, local expertise, or photo identification. Common names are more familiar to general audiences than scientific names.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Which species are in your inventory and their abundance. Allows filtering to specific species for targeted analysis (e.g., all oaks, all maples). Shows species diversity and dominance patterns. Helps identify trees for species-specific maintenance or monitoring.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Common names can vary regionally—same species may have multiple common names, or same common name may refer to different species in different regions. Species identification accuracy depends on data collector training. Young trees or trees without leaves may be difficult to identify precisely. Does not indicate cultivar or variety.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Filter to high-performing species for best practice documentation. Select disease-susceptible species (e.g., ash, elm) for monitoring or treatment planning. Create species-specific care guides or fact sheets. Analyze species diversity to identify monoculture risk. Filter to native species for ecological value reporting. Generate species lists for community tree tours or educational programs.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </div>
+            </div>
             <div id="individual-benefits" class="reference-table collapsed" data-group="Individual Benefits">
                 <div class="table-header">Individual Benefits</div>
                 
@@ -2035,22 +2400,22 @@
                             <div class="widget-fields-grid">
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Interactive web map showing tree locations, benefit values, and spatial distribution. Allows visualization of benefit hotspots, gaps in canopy, and geographic patterns. Supports filtering by any dashboard criteria.</div>
+                                    <div class="widget-field-content">Interactive web map showing tree locations, benefit values, and spatial distribution. Includes spatial filter layer containing predefined geographic boundaries (Census Tracts, Block Groups, Municipalities, ZIP Codes, CSN Focus areas, High Engagement zones, Service Areas). Map selection tools (polygon, circle, lasso) are used to select these spatial filter polygons, which then filters the dashboard to show only trees contained within the selected geographies. This polygon-based selection method ensures alignment with standard geographic boundaries for demographic and environmental justice analysis. Trees automatically cluster at lower zoom levels to improve legibility. Click individual trees to view details. Map zooms/pans automatically when Groundwork Affiliate filter is changed.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Where benefits are concentrated geographically. Reveals spatial inequities, benefit hotspots, and planting opportunities. Supports place-based program planning.</div>
+                                    <div class="widget-field-content">Where benefits are concentrated geographically using standard geographic boundaries. Reveals spatial inequities, benefit hotspots, planting gaps, and distribution patterns aligned with Census geographies and community-defined zones. Shows trees in context of neighborhoods, jurisdictions, and priority areas. Enables consistent, repeatable geographic analysis tied to demographic data sources.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Map shows current tree locations only. Does not show opportunity sites for new planting or areas lacking canopy. Benefit calculations are per-tree, not canopy coverage per area.</div>
+                                    <div class="widget-field-content">Map shows current tree locations only—does not show opportunity sites for future planting or areas lacking canopy coverage. Benefit calculations are per-tree point locations, not continuous canopy coverage per area. Clustering at low zoom levels shows approximate locations for legibility, not exact positions. Spatial filtering requires selecting polygons from the filter layer—you cannot draw completely custom boundaries independent of predefined geographies. Trees are filtered based on spatial containment within selected polygons.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Review and share back distribution of tree plantings and their benefits. Identify environmental justice communities for planting. Show stakeholders where benefits are concentrated. Support equity analysis of tree distribution. Guide strategic planting to fill gaps. Communicate program impact geographically.</div>
+                                    <div class="widget-field-content">Use map selection tools (polygon, circle, lasso) to select one or more geographic areas from the spatial filter layer—for example, select multiple census tracts in an environmental justice neighborhood to see total tree count and benefits for that area. Select municipalities or ZIP codes for jurisdictional reporting and partner collaboration. Select CSN Focus or High Engagement polygons to analyze trees in climate equity priority zones. Zoom in to see individual tree locations within selected areas. Use spatial selection for place-based storytelling and community presentations showing localized impact. Generate reports for specific neighborhoods, council districts, or planning areas by selecting relevant polygons. Support equity analysis by selecting census tracts and overlaying with demographic data. The polygon-based approach ensures your geographic filters align with standard boundaries used in demographic and planning datasets.</div>
                                 </div>
                             </div>
                         </div>
@@ -2097,6 +2462,7 @@
         
     </div>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-upper">
             <div class="footer-content">
@@ -2107,11 +2473,9 @@
                 
                 <div class="footer-section">
                     <h3>Resources</h3>
-                    <p><a href="user-guide.html">User Guide</a></p>
-                    <p><a href="methodology.html">Methodology</a></p>
-                    <p><a href="widget-quick-reference.html">Widget Reference</a></p>
+                    <p><a href="widget-ref.html">Widget Reference</a></p>
+                    <p><a href="use-cases.html">Use Cases</a></p>
                     <p><a href="data-dictionary.html">Data Dictionary</a></p>
-                    <p><a href="faqs.html">FAQs</a></p>
                 </div>
                 
                 <div class="footer-section">
@@ -2133,19 +2497,46 @@
     const filterButtons = document.querySelectorAll('.filter-btn');
     const searchBox = document.getElementById('searchBox');
     const resultCount = document.getElementById('resultCount');
-    const totalWidgets = allWidgets.length;
+    const totalWidgets = 59;
     let activeGroup = 'all';
     let activeTab = 'all';
     
     // Scroll to group function
-    function scrollToGroup(groupName) {
+    function scrollToGroup(groupName, tabName) {
         const groupId = groupName.toLowerCase().replace(/\s+/g, '-');
         const groupElement = document.getElementById(groupId);
         if (groupElement) {
-            groupElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-                window.scrollBy(0, -100);
-            }, 300);
+            // If a specific tab is selected, scroll directly to that tab's header
+            if (tabName && tabName !== 'all') {
+                // Find the widget-group with matching data-tab attribute
+                const widgetGroups = groupElement.querySelectorAll('.widget-group');
+                let targetGroup = null;
+                
+                widgetGroups.forEach(wg => {
+                    if (wg.getAttribute('data-tab') === tabName) {
+                        targetGroup = wg;
+                    }
+                });
+                
+                if (targetGroup) {
+                    targetGroup.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => {
+                        window.scrollBy(0, -120);
+                    }, 300);
+                } else {
+                    // Fallback if tab not found
+                    groupElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => {
+                        window.scrollBy(0, -100);
+                    }, 300);
+                }
+            } else {
+                // For group-level selection, show the group header
+                groupElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(() => {
+                    window.scrollBy(0, -100);
+                }, 300);
+            }
         }
     }
     
@@ -2202,6 +2593,31 @@
             }
         });
 
+        // Hide sections that have no visible widgets
+        groupContainers.forEach(group => {
+            const groupWidgets = group.querySelectorAll('.widget-entry');
+            const hasVisibleWidgets = Array.from(groupWidgets).some(widget => !widget.classList.contains('hidden'));
+            
+            if (hasVisibleWidgets) {
+                group.classList.remove('hidden');
+            } else {
+                group.classList.add('hidden');
+            }
+        });
+        
+        // Hide widget-group tabs that have no visible widgets
+        const widgetGroups = document.querySelectorAll('.widget-group');
+        widgetGroups.forEach(widgetGroup => {
+            const widgets = widgetGroup.querySelectorAll('.widget-entry');
+            const hasVisibleWidgets = Array.from(widgets).some(widget => !widget.classList.contains('hidden'));
+            
+            if (hasVisibleWidgets) {
+                widgetGroup.classList.remove('hidden');
+            } else {
+                widgetGroup.classList.add('hidden');
+            }
+        });
+
         resultCount.textContent = `${visibleCount} of ${totalWidgets} widgets`;
     });
 
@@ -2213,9 +2629,15 @@
             activeGroup = this.getAttribute('data-group');
             activeTab = this.getAttribute('data-tab');
             
-            // Scroll to the group section
+            // Expand the selected group section
             if (activeGroup !== 'all') {
-                scrollToGroup(activeGroup);
+                groupContainers.forEach(group => {
+                    const groupName = group.getAttribute('data-group');
+                    if (groupName === activeGroup) {
+                        group.classList.remove('collapsed');
+                    }
+                });
+                scrollToGroup(activeGroup, activeTab);
             }
             
             const searchTerm = searchBox.value.toLowerCase().trim();
@@ -2263,6 +2685,29 @@
     
     // Handle browser back/forward with anchors
     window.addEventListener('hashchange', handleAnchorLink);
+    
+    // Expand/Collapse All functionality
+    document.getElementById('expandAll').addEventListener('click', function() {
+        // Expand all group sections
+        groupContainers.forEach(group => {
+            group.classList.remove('collapsed');
+        });
+        // Expand all individual widgets
+        allWidgets.forEach(widget => {
+            widget.classList.add('expanded');
+        });
+    });
+    
+    document.getElementById('collapseAll').addEventListener('click', function() {
+        // Collapse all group sections
+        groupContainers.forEach(group => {
+            group.classList.add('collapsed');
+        });
+        // Collapse all individual widgets
+        allWidgets.forEach(widget => {
+            widget.classList.remove('expanded');
+        });
+    });
 </script>
 
 </body>
