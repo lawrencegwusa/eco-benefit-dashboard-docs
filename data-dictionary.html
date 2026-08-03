@@ -47,12 +47,12 @@
             <div class="sidebar-section">
                 <h4>Categories</h4>
 <ul>
-        <li><button class="filter-btn" data-category="Details">Details <span class="filter-count">(43)</span></button></li>
-        <li><button class="filter-btn" data-category="Measurements">Measurements <span class="filter-count">(12)</span></button></li>
-        <li><button class="filter-btn" data-category="Site">Site <span class="filter-count">(11)</span></button></li>
-        <li><button class="filter-btn" data-category="Raw Benefit">Raw Benefit <span class="filter-count">(52)</span></button></li>
-        <li><button class="filter-btn" data-category="Benefit Value">Benefit Value <span class="filter-count">(36)</span></button></li>
-        <li><button class="filter-btn" data-category="Administrative">Administrative <span class="filter-count">(6)</span></button></li>
+        <li><button class="filter-btn" data-category="Details">Details <span class="filter-count">(36)</span></button></li>
+        <li><button class="filter-btn" data-category="Measurements">Measurements <span class="filter-count">(11)</span></button></li>
+        <li><button class="filter-btn" data-category="Site">Site <span class="filter-count">(17)</span></button></li>
+        <li><button class="filter-btn" data-category="Raw Benefit">Raw Benefit <span class="filter-count">(62)</span></button></li>
+        <li><button class="filter-btn" data-category="Benefit Value">Benefit Value <span class="filter-count">(26)</span></button></li>
+        <li><button class="filter-btn" data-category="Administrative">Administrative <span class="filter-count">(8)</span></button></li>
         <li><button class="filter-btn" data-category="Metadata">Metadata <span class="filter-count">(5)</span></button></li>
                 </ul>
             </div>
@@ -92,10 +92,10 @@
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">2.</span>
                     <span class="field-name">fulladdr</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Nearest address</span></div>
@@ -103,15 +103,15 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Nearest address
+                            <strong>Description:</strong> Complete street address of tree location including street, city, state, ZIP
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">3.</span>
                     <span class="field-name">overheadutilities</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Overhead utilities</span></div>
@@ -121,7 +121,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Overhead utilities
+                            <strong>Description:</strong> Are there powerlines or overhead utilities above the tree?
                         </div>
                     </div>
                 </li>
@@ -137,7 +137,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree notes
+                            <strong>Description:</strong> Free text notes or comments regarding the tree
                         </div>
                     </div>
                 </li>
@@ -151,11 +151,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Planting space status</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Available; Assigned_Planting; Planted; Stump; Retired ... (6 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Available; Assigned Planting; Planted; Stump; Retired ... (6 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Available; Assigned_Planting; Planted; Stump; Retired; Other</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Available; Assigned Planting; Planted; Stump; Retired; Other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Planting space status
+                            <strong>Description:</strong> Records status of a planting space. Is there a tree or is it availble to be planted?
                         </div>
                     </div>
                 </li>
@@ -169,11 +169,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Planting space type</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Bark; Brick; Grass; Grate; Grave ... (9 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Bark; Brick; Grass; Grate; Gravel ... (9 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Bark; Brick; Grass; Grate; Grave; Mulch; Pavers; Soil; Other</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Bark; Brick; Grass; Grate; Gravel; Mulch; Pavers; Soil; Other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Planting space type
+                            <strong>Description:</strong> Types of urban tree planting spaces.
                         </div>
                     </div>
                 </li>
@@ -187,19 +187,19 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Site type</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Circle; Curb; Island; Landscape; Median ... (8 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Traffic circle; Curb; Traffic island; Landscape area; Traffic median ... (8 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Circle; Curb; Island; Landscape; Median; Park; Residential Property; Other</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Traffic circle; Curb; Traffic island; Landscape area; Traffic median; Park; Residential Property; Other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Site type
+                            <strong>Description:</strong> Types of urban tree planting sites.
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Measurements">
+                <li class="field-item" data-category="Details">
                     <span class="field-position">8.</span>
                     <span class="field-name">spacewidth</span>
-                    <span class="category-badge cat-measurements">Measurements</span>
+                    <span class="category-badge cat-details">Details</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Width</span></div>
@@ -207,7 +207,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Width
+                            <strong>Description:</strong> Planting space width (in)
                         </div>
                     </div>
                 </li>
@@ -223,7 +223,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Length
+                            <strong>Description:</strong> Planting space length (in)
                         </div>
                     </div>
                 </li>
@@ -239,7 +239,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Space notes
+                            <strong>Description:</strong> Free text notes or comments regarding the planting space
                         </div>
                     </div>
                 </li>
@@ -253,9 +253,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Maintained by</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">0; 1; 2; 3; 4; 5</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Groundwork; Collaborating Organization; Resident or Volunteer; Local Government; Other; Unsure</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Maintained by
+                            <strong>Description:</strong> Primary caretaker of the tree
                         </div>
                     </div>
                 </li>
@@ -271,7 +273,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Nickname
+                            <strong>Description:</strong> A nickname given by the data collector just for fun.
                         </div>
                     </div>
                 </li>
@@ -287,7 +289,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Global ID
+                            <strong>Description:</strong> ESRI Global ID for geodatabase record management
                         </div>
                     </div>
                 </li>
@@ -303,7 +305,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Created By
+                            <strong>Description:</strong> User that created the tree record
                         </div>
                     </div>
                 </li>
@@ -319,7 +321,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Created On
+                            <strong>Description:</strong> Timestamp of record creation
                         </div>
                     </div>
                 </li>
@@ -335,7 +337,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Last Edited By
+                            <strong>Description:</strong> Last user to edit the tree record
                         </div>
                     </div>
                 </li>
@@ -351,7 +353,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Last Edited On
+                            <strong>Description:</strong> Timestamp of last edit
                         </div>
                     </div>
                 </li>
@@ -367,7 +369,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Trust Abbreviation
+                            <strong>Description:</strong> Groundwork Trust abbreviation
                         </div>
                     </div>
                 </li>
@@ -383,7 +385,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Trust Name
+                            <strong>Description:</strong> Groundwork Trust full name
                         </div>
                     </div>
                 </li>
@@ -399,7 +401,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Collaborating Org
+                            <strong>Description:</strong> Name of collaborating organization
                         </div>
                     </div>
                 </li>
@@ -417,7 +419,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> USDA Funded
+                            <strong>Description:</strong> Records if the tree planting or inventory was funded by the USDA
                         </div>
                     </div>
                 </li>
@@ -433,7 +435,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Local Funding Source
+                            <strong>Description:</strong> Designates a local funding source specific to a Groundwork Trust or collaborating organization
                         </div>
                     </div>
                 </li>
@@ -447,11 +449,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Planted by Type</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">adult staff; youth staff; volunteers; homeowner; contractor ... (6 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">adult staff; youth staff; volunteers; homeowner; contractor ... (6 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">adult staff; youth staff; volunteers; homeowner; contractor; other</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">adult staff; youth staff; volunteers; homeowner; contractor; other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Planted by Type
+                            <strong>Description:</strong> Type of entity that planted the tree (e.g., youth staff, contractor)
                         </div>
                     </div>
                 </li>
@@ -467,7 +469,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Nursery of Origin
+                            <strong>Description:</strong> Nursery or source where tree was obtained
                         </div>
                     </div>
                 </li>
@@ -485,7 +487,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">canopy; understory; evergreen; unsure</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Size Type
+                            <strong>Description:</strong> Size category at planting (e.g., canopy, understory)
                         </div>
                     </div>
                 </li>
@@ -503,7 +505,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">ball-and-burlap; container; bareroot; seedling; other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Stock Type
+                            <strong>Description:</strong> Type of nursery stock (e.g., container, B&amp;B, bare root)
                         </div>
                     </div>
                 </li>
@@ -519,7 +521,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Species Code
+                            <strong>Description:</strong> iTree species code
                         </div>
                     </div>
                 </li>
@@ -537,7 +539,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Multi-stem
+                            <strong>Description:</strong> Records it the tree is a multi-stem species or not
                         </div>
                     </div>
                 </li>
@@ -555,7 +557,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> New Planting
+                            <strong>Description:</strong> Records if the tree is a new planting or an inventory of an existing tree
                         </div>
                     </div>
                 </li>
@@ -571,7 +573,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Date Planted
+                            <strong>Description:</strong> Date when tree was planted (ISO 8601 format)
                         </div>
                     </div>
                 </li>
@@ -587,7 +589,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Trunk Diameter (dbh) (in)
+                            <strong>Description:</strong> Diameter at breast height in inches (4.5 feet above ground)
                         </div>
                     </div>
                 </li>
@@ -603,7 +605,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Missing Crown (%)
+                            <strong>Description:</strong> Percentage of missing crown
                         </div>
                     </div>
                 </li>
@@ -619,7 +621,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Dieback (%)
+                            <strong>Description:</strong> Percentage of crown dieback
                         </div>
                     </div>
                 </li>
@@ -633,11 +635,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Tree Condition</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Excellent; Good; Fair; Poor; Critical ... (7 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Excellent; Good; Fair; Poor; Critical ... (7 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">Excellent; Good; Fair; Poor; Critical; Dying; Dead</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Excellent; Good; Fair; Poor; Critical; Dying; Dead</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Condition
+                            <strong>Description:</strong> Overall health assessment (Excellent, Good, Fair, Poor, Critical, Dead)
                         </div>
                     </div>
                 </li>
@@ -655,7 +657,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Street Tree
+                            <strong>Description:</strong> Records if the tree a street tree or not
                         </div>
                     </div>
                 </li>
@@ -673,7 +675,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Public; Private</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Public or Private
+                            <strong>Description:</strong> Records if the tree is planted on public or private property
                         </div>
                     </div>
                 </li>
@@ -687,11 +689,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Land Use Type</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">R; M; C; P; E ... (13 total)</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Residential; Multi-family; Commercial, industrial; Park; Cemetery ... (13 total)</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">R; M; C; P; E; G; A; V; I; U; W; T; O</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Residential; Multi-family; Commercial, industrial; Park; Cemetery; Golf Course; Agriculture; Vacant; Institutional; Utility; Water, wetland; Transportation; Other</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Land Use Type
+                            <strong>Description:</strong> Records the land use type of the parcel on which the tree is planted
                         </div>
                     </div>
                 </li>
@@ -705,9 +707,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Direction to Nearest Building</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">0; 45; 90; 135; 180; 225; 270; 315</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">North; Northeast; East; Southeast; South; Southwest; West; Northwest</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Direction to Nearest Building
+                            <strong>Description:</strong> Cardinal direction of building relative to tree
                         </div>
                     </div>
                 </li>
@@ -723,7 +727,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Property Owner
+                            <strong>Description:</strong> Records the property owner of the parcel on which the tree is planted
                         </div>
                     </div>
                 </li>
@@ -736,10 +740,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Tree ID</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree ID
+                            <strong>Description:</strong> GWUSA tree unique identifier
                         </div>
                     </div>
                 </li>
@@ -755,7 +759,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Other Species
+                            <strong>Description:</strong> Records a tree species that is not included in the comprehensive iTree species list
                         </div>
                     </div>
                 </li>
@@ -773,7 +777,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Building within 60 ft. of Tree (yes/no)
+                            <strong>Description:</strong> Records if there is a building within 60ft of the tree
                         </div>
                     </div>
                 </li>
@@ -791,7 +795,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Buliding Stories
+                            <strong>Description:</strong> Records if the building is less than 3 stories tall
                         </div>
                     </div>
                 </li>
@@ -805,9 +809,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Heated Building</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">1; 0</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Building has heating utilities; Building does not have heating utilities</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Heated Building
+                            <strong>Description:</strong> Records if the building has central heating
                         </div>
                     </div>
                 </li>
@@ -821,9 +827,11 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Air Conditioned Building</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">1; 0</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Building has air conditioning; Building does not have air conditioning</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Air Conditioned Building
+                            <strong>Description:</strong> Records if the building has air conditioning
                         </div>
                     </div>
                 </li>
@@ -839,7 +847,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Contact First Name
+                            <strong>Description:</strong> Primary contact first name
                         </div>
                     </div>
                 </li>
@@ -855,7 +863,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Contact Last Name
+                            <strong>Description:</strong> Primary contact last name
                         </div>
                     </div>
                 </li>
@@ -871,7 +879,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Contact Phone Number
+                            <strong>Description:</strong> Primary contact phone number
                         </div>
                     </div>
                 </li>
@@ -887,7 +895,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Contact Email
+                            <strong>Description:</strong> Primary contact email
                         </div>
                     </div>
                 </li>
@@ -900,10 +908,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Trunk Diameter (dbh) (cm)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Trunk Diameter (dbh) (cm)
+                            <strong>Description:</strong> Diameter at breast height in centimeters (converted from dbh_in)
                         </div>
                     </div>
                 </li>
@@ -916,10 +924,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Tree Height (m)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Height (m)
+                            <strong>Description:</strong> Tree height in meters
                         </div>
                     </div>
                 </li>
@@ -935,7 +943,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Height (ft)
+                            <strong>Description:</strong> Tree height in feet
                         </div>
                     </div>
                 </li>
@@ -948,10 +956,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Tree Crown Height (m)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Crown Height (m)
+                            <strong>Description:</strong> Crown base height in meters
                         </div>
                     </div>
                 </li>
@@ -967,7 +975,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Crown Height (ft)
+                            <strong>Description:</strong> Crown base height in feet
                         </div>
                     </div>
                 </li>
@@ -980,10 +988,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Tree Crown Width (m)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Crown Width (m)
+                            <strong>Description:</strong> Crown width in meters
                         </div>
                     </div>
                 </li>
@@ -999,7 +1007,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Crown Width (ft)
+                            <strong>Description:</strong> Crown width in feet
                         </div>
                     </div>
                 </li>
@@ -1013,17 +1021,19 @@
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Crown Light Exposure (CLE)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Codes:</span> <span class="field-meta-value">0; 1; 2; 3; 4; 5</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">no light exposure; 1 side; 2 sides; 3 sides; 4 sides; 5 sides - full exposure</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Crown Light Exposure (CLE)
+                            <strong>Description:</strong> Number of sides of the tree exposed to sunlight
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">58.</span>
                     <span class="field-name">house_vintage</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">House Vintage</span></div>
@@ -1033,7 +1043,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">pre-1950; 1950-1980; post-1980</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> House Vintage
+                            <strong>Description:</strong> Age of nearest building
                         </div>
                     </div>
                 </li>
@@ -1049,7 +1059,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Distance to Nearest Building (ft)
+                            <strong>Description:</strong> Distance to nearest building in feet
                         </div>
                     </div>
                 </li>
@@ -1062,10 +1072,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Distance to Nearest Building (m)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Integer</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Distance to Nearest Building (m)
+                            <strong>Description:</strong> Distance to nearest building in meters
                         </div>
                     </div>
                 </li>
@@ -1081,7 +1091,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Species Common Name
+                            <strong>Description:</strong> Common name of tree species
                         </div>
                     </div>
                 </li>
@@ -1097,7 +1107,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Species Scientific Name
+                            <strong>Description:</strong> Scientific (Latin) name of tree species
                         </div>
                     </div>
                 </li>
@@ -1113,7 +1123,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Cultivar
+                            <strong>Description:</strong> Cultivar or variety name
                         </div>
                     </div>
                 </li>
@@ -1131,15 +1141,15 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Tree Stakes; Tree Guard; Tree Diaper; Gator Bag</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Tree Care Fixtures
+                            <strong>Description:</strong> Location field - description needed
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">65.</span>
                     <span class="field-name">existing_pit</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Existing Tree Pit</span></div>
@@ -1149,15 +1159,15 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Existing Tree Pit
+                            <strong>Description:</strong> Location field - description needed
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">66.</span>
                     <span class="field-name">pave_type</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Sidewalk Pavement Type</span></div>
@@ -1167,15 +1177,15 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Asphalt; Concrete</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Sidewalk Pavement Type
+                            <strong>Description:</strong> Type of pavement around tree planting pit
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Site">
                     <span class="field-position">67.</span>
                     <span class="field-name">planting_strip</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-site">Site</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Planting Strip</span></div>
@@ -1185,7 +1195,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Planting Strip
+                            <strong>Description:</strong> Records if tree is in a planting strip
                         </div>
                     </div>
                 </li>
@@ -1203,7 +1213,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Planted by Groundwork
+                            <strong>Description:</strong> Records if tree was planting by a Groundwork Trust
                         </div>
                     </div>
                 </li>
@@ -1219,7 +1229,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Heat Illness: Value of Heat Illness Reduction (USD)
+                            <strong>Description:</strong> Dollar value of prevented heat illness hospitalizations
                         </div>
                     </div>
                 </li>
@@ -1235,7 +1245,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Total Benefit Value (iTree, Heat Illness)
+                            <strong>Description:</strong> Total annual value including heat illness prevention benefits
                         </div>
                     </div>
                 </li>
@@ -1253,7 +1263,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Domain Names:</span> <span class="field-meta-value">Yes; No</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Microforest (yes, no)
+                            <strong>Description:</strong> Records if the tree is part of a microforest
                         </div>
                     </div>
                 </li>
@@ -1285,7 +1295,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Return on investment: ratio of total benefit value to O&M costs
+                            <strong>Description:</strong> Return on investment: ratio of total benefit value to O&amp;M costs
                         </div>
                     </div>
                 </li>
@@ -1330,12 +1340,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">total_benefit_value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Total Eco Benefit Value ($)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> total_benefit_value
+                            <strong>Description:</strong> Total annual economic value of all ecosystem services
                         </div>
                     </div>
                 </li>
@@ -1346,12 +1356,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">RunoffAvoided</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Runoff Avoided</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> RunoffAvoided
+                            <strong>Description:</strong> Gallons of stormwater runoff prevented annually
                         </div>
                     </div>
                 </li>
@@ -1364,10 +1374,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Interception</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Interception
+                            <strong>Description:</strong> Gallons of precipitation intercepted by canopy annually
                         </div>
                     </div>
                 </li>
@@ -1378,12 +1388,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">PotentialEvaporation</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Potential Evaporation</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> PotentialEvaporation
+                            <strong>Description:</strong> Evaporation component of water cycle (gallons/year)
                         </div>
                     </div>
                 </li>
@@ -1394,12 +1404,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">PotentialEvapotranspiration</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Potential Evapotranspiration</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> PotentialEvapotranspiration
+                            <strong>Description:</strong> Transpiration by tree (gallons/year)
                         </div>
                     </div>
                 </li>
@@ -1412,10 +1422,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Evaporation</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Evaporation
+                            <strong>Description:</strong> Evaporation component of water cycle (gallons/year)
                         </div>
                     </div>
                 </li>
@@ -1431,7 +1441,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> Transpiration
+                            <strong>Description:</strong> Transpiration by tree (gallons/year)
                         </div>
                     </div>
                 </li>
@@ -1442,12 +1452,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuHeatShade</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Heat Shade</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuHeatShade
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1458,12 +1468,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuHeatClimate</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Heat Climate</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuHeatClimate
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1474,12 +1484,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuWindHeat</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Wind Heat</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuWindHeat
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1490,12 +1500,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatShade</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Heat Shade</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatShade
+                            <strong>Description:</strong> Electricity impact in kWh/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1506,12 +1516,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatClimate</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Heat Climate</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatClimate
+                            <strong>Description:</strong> Electricity impact in kWh/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1524,10 +1534,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatWind</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatWind
+                            <strong>Description:</strong> Electricity impact in kWh/year (heating)
                         </div>
                     </div>
                 </li>
@@ -1540,10 +1550,10 @@
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityCoolShade</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityCoolShade
+                            <strong>Description:</strong> Electricity impact in kWh/year (cooling)
                         </div>
                     </div>
                 </li>
@@ -1554,12 +1564,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityCoolClimate</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Cool Climate</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityCoolClimate
+                            <strong>Description:</strong> Electricity impact in kWh/year (cooling)
                         </div>
                     </div>
                 </li>
@@ -1570,12 +1580,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_CO_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed CO2 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_CO_kg
+                            <strong>Description:</strong> CO air pollution removed annually (kg)
                         </div>
                     </div>
                 </li>
@@ -1586,12 +1596,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_NO_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed NO kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_NO_kg
+                            <strong>Description:</strong> NO air pollution removed annually (kg)
                         </div>
                     </div>
                 </li>
@@ -1602,12 +1612,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_SO2_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed SO2 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_SO2_kg
+                            <strong>Description:</strong> SO2 air pollution removed annually (kg)
                         </div>
                     </div>
                 </li>
@@ -1618,12 +1628,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_O3_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed O3 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_O3_kg
+                            <strong>Description:</strong> O3 air pollution removed annually (kg)
                         </div>
                     </div>
                 </li>
@@ -1634,12 +1644,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_PM25_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed PM25 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_PM25_kg
+                            <strong>Description:</strong> PM25 air pollution removed annually (kg)
                         </div>
                     </div>
                 </li>
@@ -1650,12 +1660,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_CO_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions CO kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_CO_kg
+                            <strong>Description:</strong> CO emissions from tree (kg)
                         </div>
                     </div>
                 </li>
@@ -1666,12 +1676,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_NO2_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions NO2 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_NO2_kg
+                            <strong>Description:</strong> NO2 emissions from tree (kg)
                         </div>
                     </div>
                 </li>
@@ -1682,12 +1692,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_SO2_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions SO2 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_SO2_kg
+                            <strong>Description:</strong> SO2 emissions from tree (kg)
                         </div>
                     </div>
                 </li>
@@ -1698,12 +1708,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_PM25_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions PM25 kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_PM25_kg
+                            <strong>Description:</strong> PM25 emissions from tree (kg)
                         </div>
                     </div>
                 </li>
@@ -1714,12 +1724,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_VOC_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions VOC kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_VOC_kg
+                            <strong>Description:</strong> VOC emissions from tree (kg)
                         </div>
                     </div>
                 </li>
@@ -1730,12 +1740,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2_seq_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 kg sequestered per year</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> CO2_seq_kg
+                            <strong>Description:</strong> CO₂ sequestered annually through photosynthesis (kg)
                         </div>
                     </div>
                 </li>
@@ -1746,12 +1756,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2_avoided_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 kg Avoided at powerplant</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> CO2_avoided_kg
+                            <strong>Description:</strong> CO₂ emissions avoided through energy savings (kg)
                         </div>
                     </div>
                 </li>
@@ -1762,12 +1772,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CarbonStorage_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Total Carbon Stored to Date (kg)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> CarbonStorage_kg
+                            <strong>Description:</strong> Carbon stored in tree biomass (kg)
                         </div>
                     </div>
                 </li>
@@ -1778,12 +1788,12 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CarbonDioxideStorage_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 Equivalent of Carbon Stored (kg)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> CarbonDioxideStorage_kg
+                            <strong>Description:</strong> Carbon stored in tree biomass (kg) lifteime cumulative
                         </div>
                     </div>
                 </li>
@@ -1794,100 +1804,100 @@
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">DryWeight_kg</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Dry Weight kg</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> DryWeight_kg
+                            <strong>Description:</strong> Total dry weight of tree biomass (kg)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">106.</span>
                     <span class="field-name">RunoffAvoidedValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">RunoffAvoidedValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Runoff Avoided Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> RunoffAvoidedValue
+                            <strong>Description:</strong> Dollar value of stormwater management services (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">107.</span>
                     <span class="field-name">MbtuHeatShadeValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuHeatShadeValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Heat Shade Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuHeatShadeValue
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">108.</span>
                     <span class="field-name">MbtuHeatClimateValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuHeatClimateValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Heat Climate Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuHeatClimateValue
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">109.</span>
                     <span class="field-name">MbtuWindHeatValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">MbtuWindHeatValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Mbtu Wind Heat Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> MbtuWindHeatValue
+                            <strong>Description:</strong> Energy impact in MBtu/year (heating)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">110.</span>
                     <span class="field-name">KwhElectricityHeatShadeValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatShadeValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Heat Shade Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatShadeValue
+                            <strong>Description:</strong> Dollar value of energy benefits (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">111.</span>
                     <span class="field-name">KwhElectricityHeatClimateValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatClimateValue</span></div>
@@ -1895,47 +1905,47 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatClimateValue
+                            <strong>Description:</strong> Dollar value of energy benefits (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">112.</span>
                     <span class="field-name">KwhElectricityHeatWindValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityHeatWindValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Heat Wind Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityHeatWindValue
+                            <strong>Description:</strong> Dollar value of energy benefits (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">113.</span>
                     <span class="field-name">KwhElectricityCoolShadeValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityCoolShadeValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Kwh Electricity Cool Shade Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityCoolShadeValue
+                            <strong>Description:</strong> Dollar value of energy benefits (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">114.</span>
                     <span class="field-name">KwhElectricityCoolClimateValue</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KwhElectricityCoolClimateValue</span></div>
@@ -1943,39 +1953,39 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KwhElectricityCoolClimateValue
+                            <strong>Description:</strong> Dollar value of energy benefits (annual)
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Administrative">
                     <span class="field-position">115.</span>
                     <span class="field-name">KWhPrice</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-administrative">Administrative</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KWhPrice</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">KWh Price</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> KWhPrice
+                            <strong>Description:</strong> Regionally specific KWHPrice from iTree Eco Model
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Benefit Value">
+                <li class="field-item" data-category="Administrative">
                     <span class="field-position">116.</span>
                     <span class="field-name">ThermPrice</span>
-                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <span class="category-badge cat-administrative">Administrative</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">ThermPrice</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Therm Price</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> ThermPrice
+                            <strong>Description:</strong> Regionally specificThermPrice from iTree Eco Model
                         </div>
                     </div>
                 </li>
@@ -1986,12 +1996,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_COValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed CO Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_COValue
+                            <strong>Description:</strong> Dollar value of pollutant removal (annual)
                         </div>
                     </div>
                 </li>
@@ -2002,12 +2012,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_NOValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed NO Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_NOValue
+                            <strong>Description:</strong> Dollar value of pollutant removal (annual)
                         </div>
                     </div>
                 </li>
@@ -2018,12 +2028,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_SOValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed SO Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_SOValue
+                            <strong>Description:</strong> Dollar value of pollutant removal (annual)
                         </div>
                     </div>
                 </li>
@@ -2034,12 +2044,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_OValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed O3 Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_OValue
+                            <strong>Description:</strong> Dollar value of pollutant removal (annual)
                         </div>
                     </div>
                 </li>
@@ -2050,12 +2060,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">pollution_PMValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Pollution Removed PM Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> pollution_PMValue
+                            <strong>Description:</strong> Dollar value of pollutant removal (annual)
                         </div>
                     </div>
                 </li>
@@ -2066,12 +2076,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_COValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions CO Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_COValue
+                            <strong>Description:</strong> Dollar value of CO₂ benefit (annual)
                         </div>
                     </div>
                 </li>
@@ -2087,7 +2097,7 @@
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_SO2Value
+                            <strong>Description:</strong> Dollar cost of SO₂ emissions from maintenance ($/year)
                         </div>
                     </div>
                 </li>
@@ -2098,12 +2108,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_PM25Value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions PM25 Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_PM25Value
+                            <strong>Description:</strong> Dollar cost of PM2.5 emissions from maintenance ($/year)
                         </div>
                     </div>
                 </li>
@@ -2114,12 +2124,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_VOCValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions VOC Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_VOCValue
+                            <strong>Description:</strong> Dollar cost of VOC emissions ($/year)
                         </div>
                     </div>
                 </li>
@@ -2130,12 +2140,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">emissions_NO2Value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Emissions NO2 Value</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> emissions_NO2Value
+                            <strong>Description:</strong> Dollar cost of NO₂ emissions from maintenance ($/year)
                         </div>
                     </div>
                 </li>
@@ -2146,12 +2156,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">COValue_seq</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 Value Sequestered per year</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> COValue_seq
+                            <strong>Description:</strong> Dollar value of CO₂ benefit (annual)
                         </div>
                     </div>
                 </li>
@@ -2162,44 +2172,44 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">COValue_avoided</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 Value Avoided at powerplant</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> COValue_avoided
+                            <strong>Description:</strong> Dollar value of CO₂ benefit (annual)
+                        </div>
+                    </div>
+                </li>
+
+                <li class="field-item" data-category="Benefit Value">
+                    <span class="field-position">129.</span>
+                    <span class="field-name">CarbonDioxideStorageValue</span>
+                    <span class="category-badge cat-benefit-value">Benefit Value</span>
+                    <div class="field-details">
+                        <div class="field-meta">
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CO2 Equivalent of Carbon Stored Value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
+                        </div>
+                        <div class="field-description">
+                            <strong>Description:</strong> Carbon stored in tree biomass (kg) lifteime cumulative
                         </div>
                     </div>
                 </li>
 
                 <li class="field-item" data-category="Raw Benefit">
-                    <span class="field-position">129.</span>
-                    <span class="field-name">CarbonDioxideStorageValue</span>
+                    <span class="field-position">130.</span>
+                    <span class="field-name">hi_hosp_count</span>
                     <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">CarbonDioxideStorageValue</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Heat Illness: Reduction in Hospitalizations (count)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> CarbonDioxideStorageValue
-                        </div>
-                    </div>
-                </li>
-
-                <li class="field-item" data-category="Details">
-                    <span class="field-position">130.</span>
-                    <span class="field-name">hi_hosp_count</span>
-                    <span class="category-badge cat-details">Details</span>
-                    <div class="field-details">
-                        <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">hi_hosp_count</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
-                        </div>
-                        <div class="field-description">
-                            <strong>Description:</strong> hi_hosp_count
+                            <strong>Description:</strong> Estimated heat illness hospitalizations prevented annually
                         </div>
                     </div>
                 </li>
@@ -2210,28 +2220,28 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">hi_hosp_value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Heat Illness: Value of Reduction in Hospitalizations (USD)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> hi_hosp_value
+                            <strong>Description:</strong> Dollar value of prevented heat illness hospitalizations
                         </div>
                     </div>
                 </li>
 
-                <li class="field-item" data-category="Details">
+                <li class="field-item" data-category="Raw Benefit">
                     <span class="field-position">132.</span>
                     <span class="field-name">hi_mort_count</span>
-                    <span class="category-badge cat-details">Details</span>
+                    <span class="category-badge cat-raw-benefit">Raw Benefit</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">hi_mort_count</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Heat Illness: Reduction in Deaths (count)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> hi_mort_count
+                            <strong>Description:</strong> Estimated heat-related deaths prevented annually
                         </div>
                     </div>
                 </li>
@@ -2242,12 +2252,12 @@
                     <span class="category-badge cat-benefit-value">Benefit Value</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">hi_mort_value</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Heat Illness: Value of Reduction in Deaths (USD)</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">iTree API</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Calculated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> hi_mort_value
+                            <strong>Description:</strong> Dollar value of prevented heat-related mortality (VSL)
                         </div>
                     </div>
                 </li>
@@ -2274,12 +2284,12 @@
                     <span class="category-badge cat-metadata">Metadata</span>
                     <div class="field-details">
                         <div class="field-meta">
-                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">inspection_date</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Inspection Date</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Date/Time</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">Field collection</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
-                            <strong>Description:</strong> inspection_date
+                            <strong>Description:</strong> Date of last field inspection
                         </div>
                     </div>
                 </li>
@@ -2739,7 +2749,7 @@
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Longitude</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
@@ -2755,7 +2765,7 @@
                     <div class="field-details">
                         <div class="field-meta">
                             <div class="field-meta-line"><span class="field-meta-label">Alias:</span> <span class="field-meta-value">Latitude</span></div>
-                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Decimal</span></div>
+                            <div class="field-meta-line"><span class="field-meta-label">Data Type:</span> <span class="field-meta-value">Text</span></div>
                             <div class="field-meta-line"><span class="field-meta-label">Source:</span> <span class="field-meta-value">System-generated</span></div>
                         </div>
                         <div class="field-description">
@@ -2763,6 +2773,7 @@
                         </div>
                     </div>
                 </li>
+
             </ul>
 
         </main>
