@@ -354,7 +354,7 @@
             
             <div class="sidebar-section">
                 <button class="filter-btn active" data-group="all" data-tab="all">
-                    All Widgets <span class="filter-count">(59)</span>
+                    All Widgets <span class="filter-count">(54)</span>
                 </button>
             </div>
             
@@ -370,6 +370,12 @@
                 <h4>Groups &amp; Tabs</h4>
                 
                 <div class="group-filter">
+                    <button class="filter-btn" data-group="Record Comparison" data-tab="all">
+                        Record Comparison <span class="filter-count">(1)</span>
+                    </button>
+                </div>
+                
+                <div class="group-filter">
                     <button class="filter-btn" data-group="Filter Sidebar" data-tab="all">
                         Filter Sidebar <span class="filter-count">(10)</span>
                     </button>
@@ -377,20 +383,20 @@
                 
                 <div class="group-filter">
                     <button class="filter-btn" data-group="Individual Benefits" data-tab="all">
-                        Individual Benefits <span class="filter-count">(28)</span>
+                        Individual Benefits <span class="filter-count">(24)</span>
                     </button>
                     <div class="tab-filters">
                         <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
-                            Eco Benefits (Total) <span class="filter-count">(7)</span>
+                            Eco Benefits (Total) <span class="filter-count">(6)</span>
                         </button>
                         <button class="filter-btn" data-group="Individual Benefits" data-tab="Comparisons">
-                            Comparisons <span class="filter-count">(7)</span>
+                            Comparisons <span class="filter-count">(6)</span>
                         </button>
                         <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
-                            Eco Benefits (Tree) <span class="filter-count">(7)</span>
+                            Eco Benefits (Tree) <span class="filter-count">(6)</span>
                         </button>
                         <button class="filter-btn" data-group="Individual Benefits" data-tab="Eco Benefit Value">
-                            Eco Benefit Value <span class="filter-count">(7)</span>
+                            Eco Benefit Value <span class="filter-count">(6)</span>
                         </button>
                     </div>
                 </div>
@@ -428,7 +434,7 @@
                 
                 <div class="group-filter">
                     <button class="filter-btn" data-group="Misc. Benefit" data-tab="all">
-                        Misc. Benefit <span class="filter-count">(10)</span>
+                        Misc. Benefit <span class="filter-count">(8)</span>
                     </button>
                     <div class="tab-filters">
                         <button class="filter-btn" data-group="Misc. Benefit" data-tab="Benefit Breakdown">
@@ -436,9 +442,6 @@
                         </button>
                         <button class="filter-btn" data-group="Misc. Benefit" data-tab="Species (common)">
                             Species (common) <span class="filter-count">(2)</span>
-                        </button>
-                        <button class="filter-btn" data-group="Misc. Benefit" data-tab="Species (scientific)">
-                            Species (scientific) <span class="filter-count">(2)</span>
                         </button>
                         <button class="filter-btn" data-group="Misc. Benefit" data-tab="Affiliate">
                             Affiliate <span class="filter-count">(3)</span>
@@ -471,7 +474,58 @@
                        placeholder="Search widgets by name... (e.g., 'Runoff', 'Carbon', 'Species')"
                        autocomplete="off">
                 <div class="search-info">
-                    <span id="resultCount">59 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
+                    <span id="resultCount">54 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
+                </div>
+            </div>
+            
+            
+            <div id="record-comparison" class="reference-table collapsed" data-group="Record Comparison">
+                <div class="table-header">Record Comparison</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        Compares the number of tree records with valid eco benefit values against your total tree records, surfacing any gap between what's been processed by the eco benefit engine and what's sitting in the inventory unprocessed.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group07-records.png" alt="Record Comparison Dashboard View">
+                        <div class="screenshot-caption">Record Comparison in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="all">
+                    
+                    <li class="widget-entry" id="record-comparison-widget" data-group="Record Comparison" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Eco Benefit Records vs. Total Tree Records</span>
+                            <span class="widget-source">Source: GWUSA, Local Affiliate</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">A count of trees with valid eco benefit values compared to total tree records. Not all records pass the eco benefit processing engine. This widget visualizes the discrepancy between processed and unprocessed records.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Gives you the count of trees included in the summary numbers throughout the dashboard. Provides insight as to the number of records that aren't passing the eco benefit engine.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not identify which specific fields, records, or data collection steps are causing individual trees to fail eco benefit processing, or diagnose the underlying data quality issue.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Determine if your affiliate has a high proportion of unpassed records. This could be caused by some kind of user input error or some other data collection or processing step. If the proportion seems higher than you would expect, you can contact GWUSA to evaluate the issue.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
                 </div>
             </div>
             
@@ -854,7 +908,7 @@
                     
                     <li class="widget-entry" id="carbon-stored-pounds" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
                         <div class="widget-header">
-                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Pounds</span>
+                            <span class="widget-name">Carbon Storage (CO2e): Pounds</span>
                             <span class="widget-source">Source: iTree</span>
                         </div>
                         
@@ -885,7 +939,7 @@
                     
                     <li class="widget-entry" id="carbon-removed-pounds" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
                         <div class="widget-header">
-                            <span class="widget-name">CO2 Removed from Atmosphere: Pounds</span>
+                            <span class="widget-name">CO2 Removed: Pounds</span>
                             <span class="widget-source">Source: iTree</span>
                         </div>
                         
@@ -976,37 +1030,6 @@
                         </div>
                     </li>
                     
-                    <li class="widget-entry" id="heating-energy-mbtu" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
-                        <div class="widget-header">
-                            <span class="widget-name">Heating Energy Saved: MBTU</span>
-                            <span class="widget-source">Source: iTree</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Heating energy (natural gas, oil, electric heat) saved over 25 years through windbreak effects minus heating energy lost through winter shade. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Trees reduce wind infiltration but can block beneficial winter sun, especially on south-facing walls. Net result can be positive or negative.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Net winter energy impact from trees. Positive values mean windbreak benefit exceeds shade penalty. Negative values mean winter shade blocks more solar heat gain than the tree saves through wind reduction. Most effective for evergreens on north/northwest sides of buildings.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Only applies to subset of trees meeting building proximity criteria—check reference tree count. Climate zone strongly affects results: cold climates often show negative values due to high solar heating value, while moderate climates show positive values where windbreak benefits dominate.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Identify which tree placements provide net heating benefits vs. penalties. Support strategic evergreen planting on windward sides (north/northwest) while avoiding deciduous trees blocking south-facing walls. Negative values aren't failures—they reveal important placement considerations for future plantings.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
                     <li class="widget-entry" id="electricity-kwh" data-group="Individual Benefits" data-tab="Eco Benefits (Total)">
                         <div class="widget-header">
                             <span class="widget-name">Electricity Saved: kWh</span>
@@ -1045,7 +1068,6 @@
                     <li class="widget-entry" id="runoff-pools" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
                             <span class="widget-name">Runoff Avoided: Olympic Swimming Pools</span>
-                            <span class="widget-source">Source: GWUSA</span>
                         </div>
                         
                         <div class="widget-details">
@@ -1075,8 +1097,8 @@
                     
                     <li class="widget-entry" id="carbon-stored-cars" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
-                            <span class="widget-name">CO2 Equivalent of Carbon Stored: Cars Removed for 25 Years</span>
-                            <span class="widget-source">Source: GWUSA</span>
+                            <span class="widget-name">Carbon Storage (CO2e): Cars Removed / Year</span>
+                            <span class="widget-source">Source: U.S. Environmental Protection Agency, "Greenhouse Gas Emissions from a Typical Passenger Vehicle," https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</span>
                         </div>
                         
                         <div class="widget-details">
@@ -1106,25 +1128,25 @@
                     
                     <li class="widget-entry" id="carbon-removed-flights" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
-                            <span class="widget-name">CO2 Removed from Atmosphere: Passengers Flying Around the World</span>
-                            <span class="widget-source">Source: GWUSA</span>
+                            <span class="widget-name">CO2 Removed: Car Trips Across US</span>
+                            <span class="widget-source">Source: U.S. Environmental Protection Agency, https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references#miles</span>
                         </div>
                         
                         <div class="widget-details">
                             <div class="widget-fields-grid">
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">CO₂ sequestration converted to round-the-world passenger flights. One passenger on round-the-world flight emits ~2,812 kg CO₂ (6,200 lbs), based on Terrapass data for NY-LA round-trip (1,240 lbs) scaled by distance ratio (×5 for circumference).</div>
+                                    <div class="widget-field-content">CO2 removed from the atmosphere converted to cross-country car trips avoided. The average gasoline-powered passenger vehicle emits 0.866 lbs of CO2 per mile driven (EPA: 3.93 × 10⁻⁴ metric tons CO2e/mile). Dividing total CO2 removed (lbs) by 0.866 converts it to equivalent miles not driven. That mileage is then divided by 2,850 miles—the average LA–NYC driving distance, averaged across three Google Maps routes—to express the benefit as equivalent cross-country trips avoided.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Dramatic comparison highlighting carbon capture from tree growth. Makes abstract CO₂ sequestration tangible by referencing familiar activity.</div>
+                                    <div class="widget-field-content">A relatable comparison highlighting carbon capture from tree growth. Makes abstract CO2 sequestration tangible by framing it as trips not taken across the country.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Flight emissions are illustrative comparison only—trees don't directly offset aviation. Calculation uses scaled cross-country flight data, not actual around-the-world routes. </div>
+                                    <div class="widget-field-content">Driving miles avoided is illustrative comparison only—trees don't directly offset vehicle emissions. Calculation uses an averaged cross-country driving distance, not an actual trip taken. Based on EPA average passenger vehicle emissions; actual emissions vary by vehicle type and fuel efficiency.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
@@ -1138,7 +1160,6 @@
                     <li class="widget-entry" id="pollutants-elephants" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
                             <span class="widget-name">Air Pollutants Removed: Elephants</span>
-                            <span class="widget-source">Source: GWUSA</span>
                         </div>
                         
                         <div class="widget-details">
@@ -1168,61 +1189,30 @@
                     
                     <li class="widget-entry" id="powerplant-miles" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
-                            <span class="widget-name">Powerplant Emissions Avoided: Miles Driven</span>
-                            <span class="widget-source">Source: GWUSA</span>
+                            <span class="widget-name">Powerplant Emissions Avoided: Coal Burned (lbs)</span>
+                            <span class="widget-source">Source: US Environmental Protection Agency, https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator-calculations-and-references#railcars</span>
                         </div>
                         
                         <div class="widget-details">
                             <div class="widget-fields-grid">
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Avoided emissions converted to vehicle miles not driven. Average passenger vehicle emits 0.4 kg CO₂ per mile (EPA). Calculation: kg emissions avoided ÷ 0.4 = equivalent miles not driven (or kg × 2.5 = miles).</div>
+                                    <div class="widget-field-content">Avoided power plant emissions converted to pounds of coal not burned. One pound of coal burned emits 1.985 lbs of CO2 (EPA). Calculation: pounds of CO2 avoided ÷ 1.985 = equivalent pounds of coal not burned.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Links tree energy savings to transportation impact. "Our trees prevent emissions equivalent to X miles of driving" connects urban forestry to familiar emissions source.</div>
+                                    <div class="widget-field-content">Links tree energy savings to the fuel source powering the grid. "Our trees prevent emissions equivalent to X pounds of coal not burned" connects urban forestry to a familiar fossil fuel source.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">This represents indirect emissions avoided through energy conservation, not direct offset of vehicle use. Based on EPA average vehicle emissions; actual emissions vary by vehicle type and fuel efficiency.</div>
+                                    <div class="widget-field-content">This represents indirect emissions avoided through energy conservation, not a direct offset of coal use. Assumes coal-fired generation regardless of a region's actual fuel mix—regions with cleaner grids won't see this comparison reflected in reality as literally as regions that are coal-heavy.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Public outreach campaigns, community presentations, and social media content. Creates shareable, relateable talking about emission reduction.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="widget-entry" id="heating-homes" data-group="Individual Benefits" data-tab="Comparisons">
-                        <div class="widget-header">
-                            <span class="widget-name">Heating Energy Saved: US Homes Powered for One Year</span>
-                            <span class="widget-source">Source: GWUSA</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">MBTUs of heating energy saved converted to annual household heating equivalents. Average US household uses 90 MBTU per year for heating (U.S. Energy Information Administration Residential Energy Consumption Survey).</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Household-scale framing for heating energy savings. Shows how trees reduce neighborhood energy demand in relatable terms. More significant in northern climates.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Assumes average household heating consumption; actual usage varies by climate, home size, and insulation. Only includes space heating, not total home energy use.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Demonstrate heating cost savings to homeowners and property managers. Support weatherization and energy efficiency programs. More compelling messaging in cold climate regions. </div>
+                                    <div class="widget-field-content">Public outreach campaigns, community presentations, and social media content. Creates shareable, relatable talking points about emission reduction, particularly in regions with coal-heavy electricity generation.</div>
                                 </div>
                             </div>
                         </div>
@@ -1230,25 +1220,25 @@
                     
                     <li class="widget-entry" id="electircity-ev-miles" data-group="Individual Benefits" data-tab="Comparisons">
                         <div class="widget-header">
-                            <span class="widget-name">Electricity Saved: EV Miles Driven</span>
-                            <span class="widget-source">Source: GWUSA</span>
+                            <span class="widget-name">Electricity Saved: EV Charges</span>
+                            <span class="widget-source">Source: Electric Vehicle Database, https://ev-database.org/cheatsheet/useable-battery-capacity-electric-car</span>
                         </div>
                         
                         <div class="widget-details">
                             <div class="widget-fields-grid">
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">kWh of electricity saved converted to electric vehicle miles driven. Average EV efficiency is 0.35 kWh per mile (EnergySage/Edmunds). Calculation: kWh saved ÷ 0.35 = equivalent EV miles.</div>
+                                    <div class="widget-field-content">kWh of electricity saved converted to full electric vehicle charges. The average EV battery storage capacity is 73.1 kWh. Calculation: kWh saved ÷ 73.1 = equivalent number of full EV charges.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Modern comparison metric linking tree cooling benefits to electric vehicle charging. "Energy saved by our trees could power an EV for X miles" connects to clean energy transition.</div>
+                                    <div class="widget-field-content">A modern comparison metric linking tree cooling benefits to electric vehicle charging. "Energy saved by our trees could fully charge an EV X times" connects to the clean energy transition.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">This is a theoretical equivalency for communication. Doesn't mean electricity was actually used for EV charging. Based on average EV efficiency; varies by vehicle model and driving conditions.</div>
+                                    <div class="widget-field-content">This is a theoretical equivalency for communication. Doesn't mean the electricity was actually used for EV charging. Based on average EV battery capacity; actual capacity varies by vehicle model.</div>
                                 </div>
                                 
                                 <div class="widget-field-col">
@@ -1413,37 +1403,6 @@
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">How To Use It</div>
                                     <div class="widget-field-content">Emphasizes environmental protection and cost savings for regional utilities.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="widget-entry" id="heating-per-tree" data-group="Individual Benefits" data-tab="Eco Benefits (Tree)">
-                        <div class="widget-header">
-                            <span class="widget-name">Heating Energy Saved: MBTU per Tree</span>
-                            <span class="widget-source">Source: iTree</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Average heating energy saved or lost per tree over 25 years. Total MBTU divided by tree count. Only calculated for trees within 60 feet of buildings 3 stories or shorter. Net result of windbreak benefit minus winter shade penalty on solar heat gain.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Average benefit per tree over 25 years for energy-saving placements. Can be positive (windbreak exceeds shade penalty) or negative (shade penalty exceeds windbreak benefit). </div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Only relevant for subset meeting proximity criteria. Average includes many trees providing zero benefit. Climate zone heavily influences results—can be negative in cold climates where winter sun blocking dominates.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Emphasizes household benefit of tree planting.</div>
                                 </div>
                             </div>
                         </div>
@@ -1634,37 +1593,6 @@
                                 <div class="widget-field-col">
                                     <div class="widget-field-label">How To Use It</div>
                                     <div class="widget-field-content">Connect urban forestry to climate and air quality policy. Demonstrate co-benefits of residential energy efficiency. Prioritize planting in regions with fossil fuel-dominant electricity generation where avoided emissions are highest.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="widget-entry" id="heating-value" data-group="Individual Benefits" data-tab="Eco Benefit Value">
-                        <div class="widget-header">
-                            <span class="widget-name">Heating Energy Saved: Value</span>
-                            <span class="widget-source">Source: iTree</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Economic value of heating energy saved or lost over 25 years, converted to USD2025. Based on avoided costs of residential heating fuels (weighted by state mix of natural gas, fuel oil, and wood/other) from windbreak effects minus increased costs from winter shade blocking beneficial solar heat gain. State-specific fuel costs and building fuel distribution applied. Only for trees within 60 feet of residential buildings 3 stories or shorter. Adjusted for inflation and discounted to present value at 3%.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">The net winter energy impact value from windbreak planting. Can be positive (windbreak benefit exceeds shade penalty) or negative (shade penalty dominates). Shows dollar value of heating bill changes for property owners.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Only applies to subset meeting proximity criteria. Energy prices vary regionally and fluctuate over time. Can be negative in cold climates where blocking winter sun outweighs windbreak benefits.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Calculate ROI for evergreen windbreak programs in moderate climates. Demonstrate heating savings for strategic north/northwest placements. Be cautious in cold climates—may show net costs rather than savings.</div>
                                 </div>
                             </div>
                         </div>
@@ -2209,72 +2137,6 @@
                     </li>
                 </div>
                 
-                <div class="widget-group" data-tab="Species (scientific)">
-                    <div class="group-title">Species (scientific)</div>
-                    
-                    <li class="widget-entry" id="species-count-scientific" data-group="Misc. Benefit" data-tab="Species (scientific)">
-                        <div class="widget-header">
-                            <span class="widget-name">Species Count (scientific)</span>
-                            <span class="widget-source">Source: user input</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Bar chart showing tree count by species using scientific names (Acer rubrum, Quercus palustris, etc.). Same data as common names but uses standardized scientific nomenclature.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Species abundance using precise taxonomic names. Eliminates confusion from multiple common names for same species or same common name for different species.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Scientific names may be unfamiliar to general audiences. Same limitation as common name count—doesn't show size, health, or benefit contribution. Doesn't indicate site appropriateness.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Communicate with technical audiences (arborists, ecologists, researchers). Ensure precise species identification for pest/disease monitoring. Support research collaborations requiring standardized nomenclature. Compare to regional species lists.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="widget-entry" id="species-value-scientific" data-group="Misc. Benefit" data-tab="Species (scientific)">
-                        <div class="widget-header">
-                            <span class="widget-name">Benefit Value per Species (scientific)</span>
-                            <span class="widget-source">Source: user input, iTree</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">Bar chart showing average 25-year dollar value (USD25) per tree by species (scientific names). Identical data to common names but uses standardized scientific nomenclature for precision.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">High-performing species using precise taxonomic identification. Useful for technical planning documents and research applications.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Scientific names may be unfamiliar to non-technical audiences. Same limitation as common name analysis—reflects size and species traits, not site appropriateness or diversity needs.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Technical planning documents requiring precise species identification. Share with landscape architects, urban foresters, and researchers. Support species trials and performance monitoring using standardized nomenclature.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-                
                 <div class="widget-group" data-tab="Affiliate">
                     <div class="group-title">Affiliate</div>
                     
@@ -2393,7 +2255,6 @@
                     <li class="widget-entry" id="map" data-group="Map Panel" data-tab="Map">
                         <div class="widget-header">
                             <span class="widget-name">Map</span>
-                            <span class="widget-source">Source: GWUSA</span>
                         </div>
                         
                         <div class="widget-details">
@@ -2428,7 +2289,6 @@
                     <li class="widget-entry" id="data-export" data-group="Map Panel" data-tab="Export">
                         <div class="widget-header">
                             <span class="widget-name">Export Data</span>
-                            <span class="widget-source">Source: GWUSA</span>
                         </div>
                         
                         <div class="widget-details">
@@ -2497,7 +2357,7 @@
     const filterButtons = document.querySelectorAll('.filter-btn');
     const searchBox = document.getElementById('searchBox');
     const resultCount = document.getElementById('resultCount');
-    const totalWidgets = 59;
+    const totalWidgets = 54;
     let activeGroup = 'all';
     let activeTab = 'all';
     
