@@ -370,14 +370,14 @@
                 <h4>Groups &amp; Tabs</h4>
                 
                 <div class="group-filter">
-                    <button class="filter-btn" data-group="Record Comparison" data-tab="all">
-                        Record Comparison <span class="filter-count">(1)</span>
+                    <button class="filter-btn" data-group="Filter Sidebar" data-tab="all">
+                        Filter Sidebar <span class="filter-count">(10)</span>
                     </button>
                 </div>
                 
                 <div class="group-filter">
-                    <button class="filter-btn" data-group="Filter Sidebar" data-tab="all">
-                        Filter Sidebar <span class="filter-count">(10)</span>
+                    <button class="filter-btn" data-group="Record Comparison" data-tab="all">
+                        Record Comparison <span class="filter-count">(1)</span>
                     </button>
                 </div>
                 
@@ -475,57 +475,6 @@
                        autocomplete="off">
                 <div class="search-info">
                     <span id="resultCount">54 widgets</span> | Click group headers to show/hide descriptions, click widgets to expand details
-                </div>
-            </div>
-            
-            
-            <div id="record-comparison" class="reference-table collapsed" data-group="Record Comparison">
-                <div class="table-header">Record Comparison</div>
-                
-                <div class="group-intro">
-                    <div class="group-description">
-                        Compares the number of tree records with valid eco benefit values against your total tree records, surfacing any gap between what's been processed by the eco benefit engine and what's sitting in the inventory unprocessed.
-                    </div>
-                    
-                    <div class="group-screenshot">
-                        <img src="images/group07-records.png" alt="Record Comparison Dashboard View">
-                        <div class="screenshot-caption">Record Comparison in the Eco-Benefit Dashboard</div>
-                    </div>
-                </div>
-                
-                <div class="widget-group" data-tab="all">
-                    
-                    <li class="widget-entry" id="record-comparison-widget" data-group="Record Comparison" data-tab="all">
-                        <div class="widget-header">
-                            <span class="widget-name">Eco Benefit Records vs. Total Tree Records</span>
-                            <span class="widget-source">Source: GWUSA, Local Affiliate</span>
-                        </div>
-                        
-                        <div class="widget-details">
-                            <div class="widget-fields-grid">
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">Description</div>
-                                    <div class="widget-field-content">A count of trees with valid eco benefit values compared to total tree records. Not all records pass the eco benefit processing engine. This widget visualizes the discrepancy between processed and unprocessed records.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Says</div>
-                                    <div class="widget-field-content">Gives you the count of trees included in the summary numbers throughout the dashboard. Provides insight as to the number of records that aren't passing the eco benefit engine.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">What It Doesn't Say</div>
-                                    <div class="widget-field-content">Does not identify which specific fields, records, or data collection steps are causing individual trees to fail eco benefit processing, or diagnose the underlying data quality issue.</div>
-                                </div>
-                                
-                                <div class="widget-field-col">
-                                    <div class="widget-field-label">How To Use It</div>
-                                    <div class="widget-field-content">Determine if your affiliate has a high proportion of unpassed records. This could be caused by some kind of user input error or some other data collection or processing step. If the proportion seems higher than you would expect, you can contact GWUSA to evaluate the issue.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
                 </div>
             </div>
             
@@ -858,6 +807,57 @@
                     
                 </div>
             </div>
+            
+            <div id="record-comparison" class="reference-table collapsed" data-group="Record Comparison">
+                <div class="table-header">Record Comparison</div>
+                
+                <div class="group-intro">
+                    <div class="group-description">
+                        Compares the number of tree records with valid eco benefit values against your total tree records, surfacing any gap between what's been processed by the eco benefit engine and what's sitting in the inventory unprocessed.
+                    </div>
+                    
+                    <div class="group-screenshot">
+                        <img src="images/group07-records.png" alt="Record Comparison Dashboard View">
+                        <div class="screenshot-caption">Record Comparison in the Eco-Benefit Dashboard</div>
+                    </div>
+                </div>
+                
+                <div class="widget-group" data-tab="all">
+                    
+                    <li class="widget-entry" id="record-comparison-widget" data-group="Record Comparison" data-tab="all">
+                        <div class="widget-header">
+                            <span class="widget-name">Eco Benefit Records vs. Total Tree Records</span>
+                            <span class="widget-source">Source: GWUSA, Local Affiliate</span>
+                        </div>
+                        
+                        <div class="widget-details">
+                            <div class="widget-fields-grid">
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">Description</div>
+                                    <div class="widget-field-content">A count of trees with valid eco benefit values compared to total tree records. Not all records pass the eco benefit processing engine. This widget visualizes the discrepancy between processed and unprocessed records.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Says</div>
+                                    <div class="widget-field-content">Gives you the count of trees included in the summary numbers throughout the dashboard. Provides insight as to the number of records that aren't passing the eco benefit engine.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">What It Doesn't Say</div>
+                                    <div class="widget-field-content">Does not identify which specific fields, records, or data collection steps are causing individual trees to fail eco benefit processing, or diagnose the underlying data quality issue.</div>
+                                </div>
+                                
+                                <div class="widget-field-col">
+                                    <div class="widget-field-label">How To Use It</div>
+                                    <div class="widget-field-content">Determine if your affiliate has a high proportion of unpassed records. This could be caused by some kind of user input error or some other data collection or processing step. If the proportion seems higher than you would expect, you can contact GWUSA to evaluate the issue.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </div>
+            </div>
+            
             <div id="individual-benefits" class="reference-table collapsed" data-group="Individual Benefits">
                 <div class="table-header">Individual Benefits</div>
                 
